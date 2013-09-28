@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Espiral
-  m_Shader: {fileID: 200, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: Planeta1
+  m_Shader: {fileID: 50, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_SavedProperties:
     serializedVersion: 2
@@ -16,24 +16,28 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 6a895aeccbabd8144882e8a70c9b8b66, type: 3}
+          m_Texture: {fileID: 2800000, guid: da2cf870db4a467489a79d708981ab9f, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
           name: _Cutoff
-        second: .0671641827
+        second: .604477584
       data:
         first:
-          name: _InvFade
-        second: 3
+          name: _Shininess
+        second: .602425992
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .492647052, g: .492647052, b: .492647052, a: 1}
       data:
         first:
-          name: _TintColor
-        second: {r: .5, g: .503448248, b: 1, a: .501960814}
+          name: _SpecColor
+        second: {r: 1, g: 1, b: 1, a: 0}
+      data:
+        first:
+          name: _Emission
+        second: {r: .257352948, g: .257352948, b: .257352948, a: 0}

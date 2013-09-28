@@ -32,7 +32,7 @@ Material:
       data:
         first:
           name: _TintColor
-        second: {r: 1, g: .393103361, b: 0, a: .501960814}
+        second: {r: 1, g: .39310354, b: 0, a: .501960814}
       data:
         first:
           name: _EmisColor
