@@ -183,7 +183,7 @@ GameObject:
   - 114: {fileID: 121455538}
   - 96: {fileID: 121455537}
   - 114: {fileID: 121455536}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,6 +202,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6facc5c672349388b0eac8a163bdc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  QueenLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  ObstaclesLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  BeesCount: 50
 --- !u!96 &121455537
 TrailRenderer:
   m_ObjectHideFlags: 0
@@ -303,7 +310,7 @@ Transform:
   m_PrefabInternal: {fileID: 1304437202}
   m_GameObject: {fileID: 121455535}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 10}
+  m_LocalPosition: {x: -10, y: 0, z: 10}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -440,7 +447,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: f77728e34c5e7404a9a7924d10f56ce8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f77728e34c5e7404a9a7924d10f56ce8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -466,6 +473,10 @@ Prefab:
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f77728e34c5e7404a9a7924d10f56ce8, type: 2}
+      propertyPath: QueenLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f77728e34c5e7404a9a7924d10f56ce8, type: 2}
   m_RootGameObject: {fileID: 1529243684}
@@ -485,7 +496,7 @@ GameObject:
   - 114: {fileID: 981793515}
   - 96: {fileID: 981793514}
   - 114: {fileID: 981793513}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -504,6 +515,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6facc5c672349388b0eac8a163bdc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  QueenLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  ObstaclesLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  BeesCount: 0
 --- !u!96 &981793514
 TrailRenderer:
   m_ObjectHideFlags: 0
@@ -605,7 +623,7 @@ Transform:
   m_PrefabInternal: {fileID: 1283764334}
   m_GameObject: {fileID: 981793512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: -3.83854675, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -683,11 +701,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: f77728e34c5e7404a9a7924d10f56ce8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f77728e34c5e7404a9a7924d10f56ce8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.83854675
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f77728e34c5e7404a9a7924d10f56ce8, type: 2}
       propertyPath: m_LocalPosition.z
@@ -708,6 +726,10 @@ Prefab:
     - target: {fileID: 400000, guid: f77728e34c5e7404a9a7924d10f56ce8, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f77728e34c5e7404a9a7924d10f56ce8, type: 2}
+      propertyPath: QueenLayer.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f77728e34c5e7404a9a7924d10f56ce8, type: 2}
@@ -723,7 +745,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: f77728e34c5e7404a9a7924d10f56ce8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f77728e34c5e7404a9a7924d10f56ce8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -748,6 +770,14 @@ Prefab:
     - target: {fileID: 400000, guid: f77728e34c5e7404a9a7924d10f56ce8, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f77728e34c5e7404a9a7924d10f56ce8, type: 2}
+      propertyPath: QueenLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: f77728e34c5e7404a9a7924d10f56ce8, type: 2}
+      propertyPath: BeesCount
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f77728e34c5e7404a9a7924d10f56ce8, type: 2}
@@ -796,7 +826,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -893,7 +923,7 @@ AudioListener:
     type: 2}
   m_PrefabInternal: {fileID: 1420908840}
   m_GameObject: {fileID: 1420702496}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!124 &1420702500
 Behaviour:
   m_ObjectHideFlags: 0
@@ -962,6 +992,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b42f02ba7ef41b4b9df5e0a4ed4620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planets:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &1420702505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1016,6 +1049,14 @@ Prefab:
     - target: {fileID: 11400004, guid: 063a51e7ae5287e45a0dd139aa90ead2, type: 2}
       propertyPath: MaxDistanceToReach
       value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8100000, guid: 063a51e7ae5287e45a0dd139aa90ead2, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 063a51e7ae5287e45a0dd139aa90ead2, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 063a51e7ae5287e45a0dd139aa90ead2, type: 2}
@@ -1084,7 +1125,7 @@ GameObject:
   - 114: {fileID: 1529243687}
   - 96: {fileID: 1529243686}
   - 114: {fileID: 1529243685}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1103,6 +1144,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6facc5c672349388b0eac8a163bdc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  QueenLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  ObstaclesLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  BeesCount: 0
 --- !u!96 &1529243686
 TrailRenderer:
   m_ObjectHideFlags: 0
@@ -1204,7 +1252,7 @@ Transform:
   m_PrefabInternal: {fileID: 600014102}
   m_GameObject: {fileID: 1529243684}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 10}
+  m_LocalPosition: {x: 10, y: 0, z: 10}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
