@@ -23,6 +23,8 @@ public class Planet : MonoBehaviour {
 
     private float StartTransferTime;
 
+    private Planet TransferPlanet;
+
     #endregion
 
     #region Unity
@@ -32,9 +34,23 @@ public class Planet : MonoBehaviour {
 	}
 
     private void Update() {
-        if (Transfering && Time.time - StartTransferTime >= TransferTime) {
+        if (Transfering && (Time.time - StartTransferTime >= TransferTime || !IsTransferPossible(TransferPlanet))) {
             EndTransfer();
         }
+    }
+
+    #endregion
+
+    #region Private Methods
+
+    private bool IsTransferPossible(Planet planet)
+    {
+        // Revisar que la reina siga de por medio
+        Vector3 onePos = Me.position;
+        Vector3 twoPos = planet.transform.position;
+        Vector3 diff = twoPos - onePos;
+
+        return Physics.Raycast(onePos, diff, diff.magnitude, QueenLayer);
     }
 
     #endregion
@@ -55,10 +71,11 @@ public class Planet : MonoBehaviour {
             SelectedPlanets.Remove(this);
     }
 
-    public void StartTransfer() {
+    public void StartTransfer(Planet other) {
         Transfering = true;
         renderer.material.color = Color.blue;
         StartTransferTime = Time.time;
+        TransferPlanet = other;
     }
 
     public void EndTransfer() {
@@ -100,18 +117,10 @@ public class Planet : MonoBehaviour {
         Planet one = SelectedPlanets[0];
         Planet two = SelectedPlanets[1];
 
-        // Chequear que la reina se encuentre de por medio
-        Vector3 onePos = one.transform.position;
-        Vector3 twoPos = two.transform.position;
-        Vector3 diff = twoPos - onePos;
-
-        RaycastHit hit;
-
-        if (Physics.Raycast(onePos, diff, out hit, diff.magnitude, one.QueenLayer)) {
-            // Iniciar transferencia
-            one.StartTransfer();
-            two.StartTransfer();
-
+        // Chequear que la transferencia sea posible
+        if (one.IsTransferPossible(two)) {
+            one.StartTransfer(two);
+            two.StartTransfer(one);
         } else {
             // Deselecciono los planetas
             one.PlanetSelection(false);
