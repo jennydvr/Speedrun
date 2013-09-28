@@ -5,9 +5,9 @@ public class Joystick : MonoBehaviour {
 
     #region Variables
 
-    public static bool CanMoveQueen = false;
+    public static bool CanMoveQueen = true;
     public static Ray ScreenRay;
-
+    public LayerMask Planets = -1;
     #endregion
 
     #region Unity
@@ -21,7 +21,7 @@ public class Joystick : MonoBehaviour {
             RaycastHit hit;
 
             // Si toco un collider y es un planeta, seleccionar
-            if (Planet.CanSelectPlanet() && Physics.Raycast(ScreenRay, out hit)) {
+            if (Planet.CanSelectPlanet() && Physics.Raycast(ScreenRay, out hit,100.0f,Planets)) {
                 // No puedo mover a la reina
                 CanMoveQueen = false;
 
