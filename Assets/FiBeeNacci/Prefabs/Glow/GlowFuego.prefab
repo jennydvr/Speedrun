@@ -11,7 +11,7 @@ GameObject:
   - 198: {fileID: 19800000}
   - 199: {fileID: 19900000}
   m_Layer: 0
-  m_Name: Nubes
+  m_Name: GlowFuego
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23,8 +23,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.33974075, y: 2.44696426, z: 45.1386757}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
+  m_LocalPosition: {x: 11.4438505, y: 7.81211758, z: 23.2860374}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -45,7 +45,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 9
+      scalar: 2.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -78,7 +78,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 0
+      scalar: .100000001
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -114,10 +114,10 @@ ParticleSystem:
       maxGradient:
         key0:
           serializedVersion: 2
-          rgba: 4284506367
+          rgba: 4294967295
         key1:
           serializedVersion: 2
-          rgba: 4286381974
+          rgba: 4294967295
         key2:
           serializedVersion: 2
           rgba: 0
@@ -157,10 +157,10 @@ ParticleSystem:
       minGradient:
         key0:
           serializedVersion: 2
-          rgba: 4294926443
+          rgba: 4294967295
         key1:
           serializedVersion: 2
-          rgba: 4294965602
+          rgba: 4294967295
         key2:
           serializedVersion: 2
           rgba: 0
@@ -202,10 +202,10 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4294967295
-      minMaxState: 3
+        rgba: 4286631167
+      minMaxState: 0
     startSize:
-      scalar: 25
+      scalar: 3.01999998
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -266,12 +266,12 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 2
     enabled: 1
-    type: 5
-    radius: 1
+    type: 0
+    radius: .00999999978
     angle: 25
     length: 5
-    boxX: 55
-    boxY: 40
+    boxX: 1
+    boxY: 1
     boxZ: 1
     placementMode: 0
     m_Mesh: {fileID: 0}
@@ -280,7 +280,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 5
+      scalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -428,7 +428,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 34502
+        atime1: 31418
         atime2: 65535
         atime3: 0
         atime4: 0
@@ -1082,7 +1082,7 @@ ParticleSystemRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 10c9b7eb5bc3d354a9ccf548e01bac37, type: 2}
+  - {fileID: 2100000, guid: 04adc750686fe164d9730b079c0b028a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
