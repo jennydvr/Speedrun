@@ -20,27 +20,32 @@ public class SplineController : MonoBehaviour
 	SplineInterpolator mSplineInterp;
 	Transform[] mTransforms;
 
+    public int InitialPos = -1;
+    public bool ConstructSpline = false;
 	void OnDrawGizmos()
-	{
-		Transform[] trans = GetTransforms();
-		if (trans.Length < 2)
-			return;
+    {
+        if (ConstructSpline)
+        {
+            Transform[] trans = GetTransforms();
+            if (trans.Length < 2)
+                return;
 
-		SplineInterpolator interp = GetComponent(typeof(SplineInterpolator)) as SplineInterpolator;
-		SetupSplineInterpolator(interp, trans);
-		interp.StartInterpolation(null, false, WrapMode);
+            SplineInterpolator interp = GetComponent(typeof(SplineInterpolator)) as SplineInterpolator;
+            SetupSplineInterpolator(interp, trans);
+            interp.StartInterpolation(null, false, WrapMode);
 
 
-		Vector3 prevPos = trans[0].position;
-		for (int c = 1; c <= 100; c++)
-		{
-			float currTime = c * Duration / 100;
-			Vector3 currPos = interp.GetHermiteAtTime(currTime);
-			float mag = (currPos-prevPos).magnitude * 2;
-			Gizmos.color = new Color(mag, 0, 0, 1);
-			Gizmos.DrawLine(prevPos, currPos);
-			prevPos = currPos;
-		}
+            Vector3 prevPos = trans[0].position;
+            for (int c = 1; c <= 100; c++)
+            {
+                float currTime = c * Duration / 100;
+                Vector3 currPos = interp.GetHermiteAtTime(currTime);
+                float mag = (currPos - prevPos).magnitude * 2;
+                Gizmos.color = new Color(mag, 0, 0, 1);
+                Gizmos.DrawLine(prevPos, currPos);
+                prevPos = currPos;
+            }
+        }
 	}
 
 
@@ -48,8 +53,8 @@ public class SplineController : MonoBehaviour
 	{
 		mSplineInterp = GetComponent(typeof(SplineInterpolator)) as SplineInterpolator;
 
-		mTransforms = GetTransforms();
-
+        mTransforms = GetTransforms(InitialPos);
+        Debug.Log(mTransforms.Length);
 		if (HideOnExecute)
 			DisableTransforms();
 
@@ -97,6 +102,7 @@ public class SplineController : MonoBehaviour
 	{
 		if (SplineRoot != null)
 		{
+            SplineRoot.SetActiveRecursively(true);
 			List<Component> components = new List<Component>(SplineRoot.GetComponentsInChildren(typeof(Transform)));
 			List<Transform> transforms = components.ConvertAll(c => (Transform)c);
 
@@ -112,10 +118,36 @@ public class SplineController : MonoBehaviour
 		return null;
 	}
 
+       Transform[] GetTransforms(int posIni)
+    {
+        if (SplineRoot != null)
+        {
+            SplineRoot.SetActiveRecursively(true);
+            List<Component> components = new List<Component>(SplineRoot.GetComponentsInChildren(typeof(Transform)));
+            List<Transform> transforms = components.ConvertAll(c => (Transform)c);
+
+            transforms.Remove(SplineRoot.transform);
+            transforms.Sort(delegate(Transform a, Transform b)
+            {
+                return a.name.CompareTo(b.name);
+            });
+
+            if (InitialPos > -1)
+            {
+                transforms.RemoveRange(0, posIni);
+            }
+
+
+            return transforms.ToArray();
+        }
+
+        return null;
+    }
+
 	/// <summary>
 	/// Disables the spline objects, we don't need them outside design-time.
 	/// </summary>
-	void DisableTransforms()
+	public void DisableTransforms()
 	{
 		if (SplineRoot != null)
 		{
@@ -127,7 +159,7 @@ public class SplineController : MonoBehaviour
 	/// <summary>
 	/// Starts the interpolation
 	/// </summary>
-	void FollowSpline()
+	public void FollowSpline()
 	{
 		if (mTransforms.Length > 0)
 		{
