@@ -90,7 +90,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d35a90bed98554f4d8b92c9cd3cfbafa, type: 3}
   m_Name: 
@@ -137,6 +137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b42f02ba7ef41b4b9df5e0a4ed4620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Planets:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,7 +155,6 @@ MonoBehaviour:
   Sprite: {fileID: 0}
   MaxDistanceToReach: .100000001
   Speed: 1
-  CanMoveQueen: 1
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

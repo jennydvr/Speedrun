@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 96: {fileID: 9600000}
   - 114: {fileID: 11400000}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,6 +107,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6facc5c672349388b0eac8a163bdc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  QueenLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  ObstaclesLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
