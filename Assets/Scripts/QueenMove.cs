@@ -32,7 +32,7 @@ public class QueenMove : MonoBehaviour {
         {
             Debug.DrawLine(Bee.position, MousePosition, Color.blue);
            // Debug.Log(MousePosition);
-            Vector3 newPos = Vector3.Slerp(transform.position, MousePosition, Speed * Time.deltaTime);
+            Vector3 newPos = Vector3.Slerp(Bee.position, MousePosition, Speed * Time.deltaTime);
             newPos.z = ZPos;
             Bee.position = newPos;
             newPos.z =Sprite.position.z;
