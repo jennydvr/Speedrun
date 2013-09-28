@@ -47,36 +47,32 @@ public class QueenMove : MonoBehaviour {
 
 
 
-	public bool CanMoveQueen = true;
+	//public bool CanMoveQueen = true;
 	Vector3 MouseClick(){
 
-        if (CanMoveQueen)
+        if (Joystick.CanMoveQueen)
         {
-            if (Input.GetMouseButtonDown(0))
+            Ray ray = Joystick.ScreenRay;
+            float ent = 100.0f;
+
+            if (plane.Raycast(ray,  out ent))
             {
-             
-                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                float ent = 100.0f;
 
-                if (plane.Raycast(ray,  out ent))
-                {
-
-                    isMoving = true;
-                    Vector3 hitPoint = ray.GetPoint(ent);
-                    hitPoint.z = ZPos;
-                    Debug.DrawRay (ray.origin, ray.direction * ent, Color.green);
-                    return hitPoint;
-                }
-
-               // Vector3 newPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));;
-               // newPos.z = 0;
-               // return newPos ;
-		
+                isMoving = true;
+                Vector3 hitPoint = ray.GetPoint(ent);
+                hitPoint.z = ZPos;
+                Debug.DrawRay (ray.origin, ray.direction * ent, Color.green);
+                return hitPoint;
             }
-            else if(isMoving)
-            {
-                return MousePosition;
-            }
+
+           // Vector3 newPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0));;
+           // newPos.z = 0;
+           // return newPos ;
+	
+       
+        } else if(isMoving)
+        {
+            return MousePosition;
         }
         isMoving = false;
         return Vector3.zero;
