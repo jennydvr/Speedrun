@@ -56,7 +56,6 @@ public class MovementTest : MonoBehaviour {
         newVector.z = n * Mathf.Sin(TotalTime);
 
         Me.Translate((newVector - Me.position) * Time.deltaTime);
-
 	}
 
     #endregion
