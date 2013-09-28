@@ -6,20 +6,13 @@ public class Joystick : MonoBehaviour {
     #region Variables
 
     /// <summary>
-    /// Plano para hacer calculos de la posicion del mouse
+    /// Puedo mover a la reina?
     /// </summary>
-    private Plane ScreenPlane;
+    public static bool CanMoveQueen = false;
 
     #endregion
 
     #region Unity
-
-    /// <summary>
-    /// Inicializacion
-    /// </summary>
-    private void Start () {
-        ScreenPlane = new Plane(Vector3.up, 20.0f);
-	}
 
 	/// <summary>
     /// Actualizacion
@@ -48,14 +41,8 @@ public class Joystick : MonoBehaviour {
                     Planet.SelectedPlanets[0].PlanetSelection(false);
                 }
 
-                // Mover reina
-                float ent;
-
-                if (ScreenPlane.Raycast(ray, out ent))
-                {
-                    Vector3 hitPoint = ray.GetPoint(ent);
-                    hitPoint.z = 0;
-                }
+                // Puedo mover a la reina
+                CanMoveQueen = true;
             }
         }
 	}
