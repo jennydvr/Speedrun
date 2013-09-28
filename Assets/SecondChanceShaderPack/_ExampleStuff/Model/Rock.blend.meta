@@ -2,7 +2,14 @@ fileFormatVersion: 2
 guid: e79e77be3180f2f41bb601901cc48a49
 ModelImporter:
   serializedVersion: 15
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Rock
+    7400000: Default Take
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
