@@ -14,7 +14,9 @@ GameObject:
   - 81: {fileID: 8100000}
   - 45: {fileID: 4500000}
   - 114: {fileID: 11400000}
-  m_Layer: 0
+  - 114: {fileID: 11400002}
+  - 114: {fileID: 11400004}
+  m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -56,7 +58,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966015
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
@@ -124,6 +126,33 @@ MonoBehaviour:
     type: 3}
   brightPassFilterShader: {fileID: 4800000, guid: 186c4c0d31e314f049595dcbaf4ca129,
     type: 3}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73b42f02ba7ef41b4b9df5e0a4ed4620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d64145fc3dda084eaf32c77f34adf52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Bee: {fileID: 0}
+  Sprite: {fileID: 0}
+  MaxDistanceToReach: .100000001
+  Speed: 1
+  CanMoveQueen: 1
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

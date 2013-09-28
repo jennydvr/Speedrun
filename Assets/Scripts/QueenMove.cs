@@ -14,6 +14,8 @@ public class QueenMove : MonoBehaviour {
 	protected Vector3 MousePosition;
 	// Use this for initialization
 	void Start () {
+        if(Bee == null)
+            Bee = GameObject.FindGameObjectWithTag("Player").transform;
 
        // Sprite.parent = Bee;
         ZPos = Bee.position.z;
