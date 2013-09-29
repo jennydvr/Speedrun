@@ -5,9 +5,11 @@ public class Planet : MonoBehaviour {
 
     #region Static Variables
 
-    private static List<Planet> SelectedPlanets = new List<Planet>();
     public static float TransferSpeed = 10.0f;
     public LayerMask QueenLayer = -1, ObstaclesLayer = -1;
+    public static LineRenderer TransferLine;
+    
+    private static List<Planet> SelectedPlanets = new List<Planet>();
 
     #endregion
 
@@ -28,6 +30,9 @@ public class Planet : MonoBehaviour {
 
 	private void Start() {
         Me = transform;
+
+        if (!TransferLine)
+            TransferLine = GameObject.Find("TransferLine").GetComponent<LineRenderer>();
 	}
 
     private void Update() {
@@ -104,14 +109,19 @@ public class Planet : MonoBehaviour {
     public void EndTransfer() {
         Transfering = false;
         PlanetSelection(false);
+        TransferLine.enabled = false;
     }
 
     #endregion
 
     #region Static Functions
 
+    public static Vector3 OnePlanetSelected() {
+        return SelectedPlanets.Count == 1 ? SelectedPlanets[0].Me.position : Vector3.one * float.PositiveInfinity;
+    }
+
     public static bool CanSelectPlanet() {
-        return Planet.SelectedPlanets.Count < 2;
+        return SelectedPlanets.Count < 2;
     }
 
     public static bool DeselectingLastPlanet() {
@@ -123,10 +133,10 @@ public class Planet : MonoBehaviour {
         return true;
     }
 
-    public static void IsPlanetSelected(Planet planet) {
+    public static bool TrySelecting(Planet planet) {
         // Si no hay componente planeta o ya se han seleccionado dos planetas
         if (planet == null || SelectedPlanets.Count == 2)
-            return;
+            return false;
 
         // Selecciono el planeta
         planet.PlanetSelection(true);
@@ -134,6 +144,8 @@ public class Planet : MonoBehaviour {
         // Si ya hay dos planetas, hacer transferencia
         if (Planet.SelectedPlanets.Count == 2)
             Planet.Transfer();
+
+        return true;
     }
 
     public static void Transfer() {
@@ -142,6 +154,8 @@ public class Planet : MonoBehaviour {
 
         // Chequear que la transferencia sea posible
         if (one.IsTransferPossible(two)) {
+            DrawTransferTrail(one.Me.position, two.Me.position);
+
             one.StartTransfer(two, true);
             two.StartTransfer(one, false);
         } else {
@@ -149,6 +163,15 @@ public class Planet : MonoBehaviour {
             one.PlanetSelection(false);
             two.PlanetSelection(false);
         }
+    }
+
+    private static void DrawTransferTrail(Vector3 one, Vector3 two) {
+        one.z = two.z = 11;
+
+        TransferLine.SetPosition(0, one);
+        TransferLine.SetPosition(1, two);
+
+        TransferLine.enabled = true;
     }
 
     #endregion
