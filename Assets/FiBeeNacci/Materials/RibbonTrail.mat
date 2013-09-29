@@ -33,3 +33,7 @@ Material:
         first:
           name: _TintColor
         second: {r: .602941155, g: .336937696, b: .336937696, a: .501960814}
+      data:
+        first:
+          name: _EmisColor
+        second: {r: .200000003, g: .200000003, b: .200000003, a: 0}

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 
 public class Planet : MonoBehaviour {
@@ -33,10 +33,13 @@ public class Planet : MonoBehaviour {
 
 	private void Start() {
         Me = transform;
+<<<<<<< HEAD
+        mPlanet = (ManagerPlanet)GameObject.FindObjectOfType(typeof(ManagerPlanet));
+=======
 
         if (!TransferLine)
             TransferLine = GameObject.Find("TransferLine").GetComponent<LineRenderer>();
-        mPlanet = (ManagerPlanet)GameObject.FindObjectOfType(typeof(ManagerPlanet));
+>>>>>>> d3a0050454b88a78e2798f708db8647b02936084
 	}
 
     private void Update() {
