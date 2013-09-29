@@ -62,6 +62,8 @@ GameObject:
   - 4: {fileID: 400006}
   - 114: {fileID: 11400012}
   - 114: {fileID: 11400010}
+  - 114: {fileID: 11400008}
+  - 114: {fileID: 11400014}
   m_Layer: 11
   m_Name: PlanetaPlanta
   m_TagString: Untagged
@@ -209,7 +211,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.4438496, y: 23.5251904, z: 1}
+  m_LocalPosition: {x: 11.4438496, y: 23.5251904, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400018}
@@ -427,11 +429,15 @@ MonoBehaviour:
     m_Bits: 512
   ObstaclesLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   BeesCount: 0
+  Type: 3
   mPlanet: {fileID: 0}
   HoleCenter: {x: -8.26220894, y: 1.55369997, z: 0}
-  MinDistanceToHole: 1.5
+  MinDistanceToHole: 1.79999995
+  mResources: {fileID: 0}
+  minRandomResources: 20
+  maxRandomResources: 30
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -445,6 +451,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: {fileID: 0}
   planet: {fileID: 11400004}
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfec486ef8674bfe801a3b291c69f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 5
+  MaxSize: 1.75
+  MinSize: .200000003
+  InitialPoint: {x: 11.4438496, y: 23.5251904, z: 1}
+  EndPoint: {x: -8.26220894, y: 1.55369997, z: 0}
+  Particles:
+  - {fileID: 19800004}
+  - {fileID: 19800000}
+  - {fileID: 19800002}
+  Limits:
+  - {x: .75, y: .75}
+  - {x: 2, y: 10}
+  - {x: 4.1500001, y: 4.1500001}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -476,6 +506,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96e28e4b772ed914483f60312063a79f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991ed59d4470fec44bc6d5b06a363a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showInPanelTool: 1
+  generateNormals: 0
+  widgetsAreStatic: 0
+  cullWhileDragging: 0
+  worldToLocal:
+    e00: .666666687
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: .666666687
+    e12: 0
+    e13: 0
+    e20: 0
+    e21: 0
+    e22: .666666687
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  mAlpha: 1
+  mClipping: 0
+  mClipRange: {x: 0, y: 0, z: 0, w: 0}
+  mClipSoftness: {x: 40, y: 40}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -63,6 +63,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400008}
+  - 114: {fileID: 11400014}
   m_Layer: 11
   m_Name: PlanetaAire
   m_TagString: Untagged
@@ -210,7 +211,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.4438496, y: 23.5251904, z: 1}
+  m_LocalPosition: {x: 11.4438496, y: 23.5251904, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400018}
@@ -411,11 +412,15 @@ MonoBehaviour:
     m_Bits: 512
   ObstaclesLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   BeesCount: 0
+  Type: 0
   mPlanet: {fileID: 0}
   HoleCenter: {x: -8.26220894, y: 1.55369997, z: 0}
-  MinDistanceToHole: 1.5
+  MinDistanceToHole: 1.79999995
+  mResources: {fileID: 0}
+  minRandomResources: 20
+  maxRandomResources: 30
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -513,6 +518,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   label: {fileID: 0}
   planet: {fileID: 11400004}
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfec486ef8674bfe801a3b291c69f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 5
+  MaxSize: 1.75
+  MinSize: .200000003
+  InitialPoint: {x: 11.4438496, y: 23.5251904, z: 1}
+  EndPoint: {x: -8.26220894, y: 1.55369997, z: 0}
+  Particles:
+  - {fileID: 19800004}
+  - {fileID: 19800000}
+  - {fileID: 19800002}
+  Limits:
+  - {x: .75, y: .75}
+  - {x: 3, y: 11}
+  - {x: 4.1500001, y: 4.1500001}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -575,7 +604,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: .150000006
+      scalar: -.150000006
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -699,10 +728,10 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4279438091
+        rgba: 4284365072
       minMaxState: 0
     startSize:
-      scalar: 2.53999996
+      scalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
