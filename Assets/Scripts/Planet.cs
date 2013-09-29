@@ -120,7 +120,7 @@ public class Planet : MonoBehaviour {
             return;
 
         Selected = select;
-        renderer.material.color = select ? Color.red : Color.white;
+        //renderer.material.color = select ? Color.red : Color.white;
 
         if (Selected)
             SelectedPlanets.Add(this);
@@ -130,7 +130,7 @@ public class Planet : MonoBehaviour {
 
     public void StartTransfer(Planet other, bool origin) {
         Transfering = true;
-        renderer.material.color = Color.blue;
+        //renderer.material.color = Color.blue;
         TransferStartTime = Time.time;
         TransferRate = TransferSpeed / (other.transform.position - Me.position).magnitude;
 
