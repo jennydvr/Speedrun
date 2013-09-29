@@ -54,7 +54,6 @@ public class SplineController : MonoBehaviour
 		mSplineInterp = GetComponent(typeof(SplineInterpolator)) as SplineInterpolator;
 
         mTransforms = GetTransforms(InitialPos);
-        Debug.Log(mTransforms.Length);
 		if (HideOnExecute)
 			DisableTransforms();
 
@@ -132,7 +131,7 @@ public class SplineController : MonoBehaviour
                 return a.name.CompareTo(b.name);
             });
 
-            if (InitialPos > -1)
+            if (InitialPos > -1 && posIni < transforms.Count)
             {
                 transforms.RemoveRange(0, posIni);
             }
@@ -161,10 +160,13 @@ public class SplineController : MonoBehaviour
 	/// </summary>
 	public void FollowSpline()
 	{
-		if (mTransforms.Length > 0)
-		{
-			SetupSplineInterpolator(mSplineInterp, mTransforms);
-			mSplineInterp.StartInterpolation(null, true, WrapMode);
-		}
+        if (mTransforms != null)
+        {
+            if (mTransforms.Length > 0)
+            {
+                SetupSplineInterpolator(mSplineInterp, mTransforms);
+                mSplineInterp.StartInterpolation(null, true, WrapMode);
+            }
+        }
 	}
 }

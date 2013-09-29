@@ -25,7 +25,6 @@ GameObject:
   - 4: {fileID: 400002}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  - 135: {fileID: 13500000}
   m_Layer: 0
   m_Name: HoyoNegroMesh
   m_TagString: Untagged
@@ -56,9 +55,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.76837158e-07, y: 3.99141312, z: -4.76837158e-07}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
+  m_LocalPosition: {x: -8.26220894, y: 1.55369961, z: 23.819685}
+  m_LocalScale: {x: .334975481, y: .334975481, z: .334975481}
   m_Children:
   - {fileID: 400002}
   - {fileID: 400004}
@@ -110,18 +109,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!135 &13500000
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .660000026
-  m_Center: {x: 5.96046448e-08, y: 0, z: -8.94069743e-08}
 --- !u!198 &19800000
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -172,7 +159,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: -.74000001
+      scalar: -.409999996
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -296,10 +283,10 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4292102655
+        rgba: 4294910001
       minMaxState: 0
     startSize:
-      scalar: 1.16999996
+      scalar: .460000008
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -361,7 +348,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     type: 0
-    radius: 2.83999991
+    radius: 5
     angle: 25
     length: 5
     boxX: 1
