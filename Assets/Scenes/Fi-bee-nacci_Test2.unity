@@ -276,7 +276,7 @@ Transform:
   m_GameObject: {fileID: 84602990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .0027397261, y: .0027397261, z: .0027397261}
+  m_LocalScale: {x: .00414078683, y: .00414078683, z: .00414078683}
   m_Children:
   - {fileID: 291326940}
   m_Father: {fileID: 0}
@@ -2819,17 +2819,17 @@ MonoBehaviour:
   widgetsAreStatic: 0
   cullWhileDragging: 0
   worldToLocal:
-    e00: 365
+    e00: 241.5
     e01: 0
     e02: 0
-    e03: 6.20893764
+    e03: 6.20755768
     e10: 0
-    e11: 365
+    e11: 241.5
     e12: 0
-    e13: -6.21000004
+    e13: -6.21010065
     e20: 0
     e21: 0
-    e22: 365
+    e22: 241.5
     e23: 0
     e30: 0
     e31: 0
@@ -8012,7 +8012,7 @@ Transform:
   m_PrefabInternal: {fileID: 1179426739}
   m_GameObject: {fileID: 588343551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.20893764, y: 6.21000004, z: 0}
+  m_LocalPosition: {x: -6.20755768, y: 6.21010065, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 256767815}
@@ -8238,7 +8238,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1372070356}
   m_GameObject: {fileID: 647635744}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d35a90bed98554f4d8b92c9cd3cfbafa, type: 3}
   m_Name: 
@@ -8349,6 +8349,7 @@ GameObject:
   - 4: {fileID: 650659908}
   - 114: {fileID: 650659909}
   - 114: {fileID: 650659910}
+  - 114: {fileID: 650659911}
   m_Layer: 11
   m_Name: PlanetaTierra
   m_TagString: Untagged
@@ -8407,6 +8408,20 @@ MonoBehaviour:
   HideOnExecute: 1
   InitialPos: -1
   ConstructSpline: 0
+--- !u!114 &650659911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 650659907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfec486ef8674bfe801a3b291c69f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 4
+  InitialPoint: {x: 11.4438496, y: 23.5251904, z: 1}
+  EndPoint: {x: -8.26220894, y: 1.55369997, z: 0}
 --- !u!1 &677940175
 GameObject:
   m_ObjectHideFlags: 0
@@ -12814,6 +12829,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1124487199}
   - 114: {fileID: 1124487200}
+  - 114: {fileID: 1124487201}
   m_Layer: 8
   m_Name: QueenSprite
   m_TagString: QueenSprite
@@ -12856,6 +12872,20 @@ MonoBehaviour:
   mFillDirection: 4
   mFillAmount: 1
   mInvert: 0
+--- !u!114 &1124487201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1124487198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfec486ef8674bfe801a3b291c69f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 10
+  InitialPoint: {x: 10, y: 1.55369997, z: 1}
+  EndPoint: {x: -8.26220894, y: 1.55369997, z: 0}
 --- !u!1 &1131688425
 GameObject:
   m_ObjectHideFlags: 0
@@ -14037,23 +14067,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: de38981d184224a199a56d7fafd4ed91, type: 2}
       propertyPath: m_LocalScale.x
-      value: .0027397261
+      value: .00414078683
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: de38981d184224a199a56d7fafd4ed91, type: 2}
       propertyPath: m_LocalScale.y
-      value: .0027397261
+      value: .00414078683
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: de38981d184224a199a56d7fafd4ed91, type: 2}
       propertyPath: m_LocalScale.z
-      value: .0027397261
+      value: .00414078683
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: de38981d184224a199a56d7fafd4ed91, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -6.20893764
+      value: -6.20755768
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: de38981d184224a199a56d7fafd4ed91, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.21000004
+      value: 6.21010065
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de38981d184224a199a56d7fafd4ed91, type: 2}
@@ -17747,6 +17777,10 @@ Prefab:
       propertyPath: Prefab.Array.data[3]
       value: 
       objectReference: {fileID: 650659907}
+    - target: {fileID: 11400000, guid: 063a51e7ae5287e45a0dd139aa90ead2, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 063a51e7ae5287e45a0dd139aa90ead2, type: 2}
   m_RootGameObject: {fileID: 647635744}
@@ -20329,6 +20363,7 @@ GameObject:
   - 4: {fileID: 1877299445}
   - 114: {fileID: 1877299446}
   - 114: {fileID: 1877299447}
+  - 114: {fileID: 1877299448}
   m_Layer: 11
   m_Name: PlanetaPlanta
   m_TagString: Untagged
@@ -20387,6 +20422,20 @@ MonoBehaviour:
   HideOnExecute: 1
   InitialPos: -1
   ConstructSpline: 0
+--- !u!114 &1877299448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1877299444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfec486ef8674bfe801a3b291c69f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 4
+  InitialPoint: {x: 11.4438496, y: 23.5251904, z: 1}
+  EndPoint: {x: -8.26220894, y: 1.55369997, z: 0}
 --- !u!1 &1880814797
 GameObject:
   m_ObjectHideFlags: 0
@@ -22980,6 +23029,7 @@ GameObject:
   - 114: {fileID: 2021977386}
   - 114: {fileID: 2021977387}
   - 114: {fileID: 2021977388}
+  - 114: {fileID: 2021977389}
   m_Layer: 11
   m_Name: PlanetaAire
   m_TagString: Untagged
@@ -23075,6 +23125,20 @@ MonoBehaviour:
   mClipping: 0
   mClipRange: {x: 0, y: 0, z: 0, w: 0}
   mClipSoftness: {x: 40, y: 40}
+--- !u!114 &2021977389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2021977384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfec486ef8674bfe801a3b291c69f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 4
+  InitialPoint: {x: 11.4438496, y: 23.5251904, z: 1}
+  EndPoint: {x: -8.26220894, y: 1.55369997, z: 0}
 --- !u!1 &2023672071
 GameObject:
   m_ObjectHideFlags: 0
@@ -23085,6 +23149,7 @@ GameObject:
   - 4: {fileID: 2023672072}
   - 114: {fileID: 2023672073}
   - 114: {fileID: 2023672074}
+  - 114: {fileID: 2023672075}
   m_Layer: 11
   m_Name: PlanetaFuego
   m_TagString: Untagged
@@ -23143,6 +23208,20 @@ MonoBehaviour:
   HideOnExecute: 1
   InitialPos: -1
   ConstructSpline: 0
+--- !u!114 &2023672075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2023672071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbfec486ef8674bfe801a3b291c69f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 4
+  InitialPoint: {x: 11.4438496, y: 23.5251904, z: 1}
+  EndPoint: {x: -8.26220894, y: 1.55369997, z: 0}
 --- !u!1 &2028569596
 GameObject:
   m_ObjectHideFlags: 0
