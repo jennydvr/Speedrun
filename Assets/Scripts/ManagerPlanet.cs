@@ -13,6 +13,8 @@ public class ManagerPlanet : MonoBehaviour
     public float MaxTimeSpawn = 3.0f;
     protected bool CanSpawn = true;
 
+    public int TotalBees;
+
     public int MinBee = 10;
     public int MaxBee = 20;
     // Use this for initialization
@@ -45,7 +47,8 @@ public class ManagerPlanet : MonoBehaviour
         SpawnPlanet(9);
         SpawnPlanet(10);
 
-        ((Planet) ( (GameObject) planetas[Random.Range(2, 7)]).GetComponentInChildren(typeof(Planet))).BeesCount =Random.Range(MinBee, MaxBee) ;
+        TotalBees = Random.Range (MinBee, MaxBee);
+        ((Planet) ( (GameObject) planetas[Random.Range(2, 7)]).GetComponentInChildren(typeof(Planet))).BeesCount = TotalBees ;
 
 
 
@@ -131,6 +134,12 @@ public class ManagerPlanet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (End)
+            return;
+
+        if (TotalBees == 0 && !End) {
+            GameOver ();
+        }
         if (CanSpawn)
         {
             SpawnPlanet();
@@ -140,5 +149,29 @@ public class ManagerPlanet : MonoBehaviour
 
 
     }
+
+    public bool End = false;
+
+    public void GameOver() {
+        End = true;
+
+        // Desactivo abeja = QueenMove
+        (GameObject.FindObjectOfType (typeof(QueenMove)) as QueenMove).enabled = false;
+
+        for (int i = 0; i != planetas.Count; ++i) {
+            GameObject planeta = planetas [i] as GameObject;
+
+            // Desactivo splines = Spline Interpolator
+            SplineInterpolator s = planeta.GetComponent<SplineInterpolator> ();
+            if (s)
+                s.enabled = false;
+
+            // Desactivo transferencias - harvest... = Planet
+            Planet p = planeta.GetComponentInChildren<Planet> ();
+            if (p)
+                p.enabled = false;
+        }
+    }
+
 }
 

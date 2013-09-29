@@ -75,6 +75,10 @@ public class Planet : MonoBehaviour {
 
     }
 
+    private void OnDestroy() {
+        mPlanet.TotalBees -= BeesCount;
+    }
+
     #endregion
 
     #region Private Methods
