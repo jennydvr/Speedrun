@@ -599,7 +599,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.41147518, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 6.47285652, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -729,7 +729,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100026}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -858.796143, y: -180.29541, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400052}
@@ -743,7 +743,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1763.19446, y: -1666.68396, z: 0}
+  m_LocalPosition: {x: 634.092468, y: -1391.68726, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400026}
@@ -766,7 +766,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5169, y: 449, z: 0}
+  m_LocalPosition: {x: 1153.77075, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400010}
@@ -779,7 +779,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4566, y: 449, z: 0}
+  m_LocalPosition: {x: 571.791687, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400036}
@@ -884,7 +884,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100052}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4008.59741, y: 449, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400050}
@@ -947,7 +947,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1416.96716, y: 1782.0697, z: 0}
+  m_LocalPosition: {x: 1410.53198, y: 1793.01099, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400060}
@@ -1094,11 +1094,11 @@ MonoBehaviour:
     e00: 160
     e01: 0
     e02: 0
-    e03: -6.41147518
+    e03: 0
     e10: 0
     e11: 160
     e12: 0
-    e13: 0
+    e13: -6.47285652
     e20: 0
     e21: 0
     e22: 160
@@ -1231,7 +1231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 332
+  mWidth: 358
   mHeight: 176
   mDepth: 2
   mFont: {fileID: 11400000, guid: e1eec530e3cb9410d80a1688356f6383, type: 2}
@@ -1434,11 +1434,11 @@ MonoBehaviour:
     e00: 160
     e01: 0
     e02: 0
-    e03: 2621.99072
+    e03: -634.092468
     e10: 0
     e11: 160
     e12: 0
-    e13: 1846.97937
+    e13: 1391.68726
     e20: 0
     e21: 0
     e22: 160
@@ -1464,10 +1464,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiCamera: {fileID: 2000000}
   container: {fileID: 0}
-  side: 0
+  side: 7
   halfPixelOffset: 1
   runOnlyOnce: 0
-  relativeOffset: {x: .25, y: .0799999982}
+  relativeOffset: {x: .0900000036, y: .150000006}
   pixelOffset: {x: 0, y: 0}
   widgetContainer: {fileID: 0}
 --- !u!114 &11400032
@@ -1483,7 +1483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 332
+  mWidth: 358
   mHeight: 176
   mDepth: 2
   mFont: {fileID: 11400000, guid: e1eec530e3cb9410d80a1688356f6383, type: 2}
@@ -1536,7 +1536,7 @@ MonoBehaviour:
   mHeight: 314
   mDepth: 1
   mAtlas: {fileID: 11400000, guid: 418103b41b8d74e1498da5a8456b823e, type: 2}
-  mSpriteName: QueenBee_1
+  mSpriteName: Poder_StopTime
   mFillCenter: 1
   mType: 0
   mFillDirection: 4
@@ -1939,11 +1939,11 @@ MonoBehaviour:
     e00: 160
     e01: 0
     e02: 0
-    e03: -1416.96716
+    e03: -1410.53198
     e10: 0
     e11: 160
     e12: 0
-    e13: -1782.0697
+    e13: -1793.01099
     e20: 0
     e21: 0
     e22: 160
