@@ -44,6 +44,7 @@ GameObject:
   - 4: {fileID: 400004}
   - 135: {fileID: 13500000}
   - 114: {fileID: 11400004}
+  - 114: {fileID: 11400006}
   m_Layer: 11
   m_Name: Planet_Collider
   m_TagString: Planet
@@ -329,6 +330,22 @@ MonoBehaviour:
   mPlanet: {fileID: 0}
   HoleCenter: {x: -8.26220894, y: 1.55369997, z: 0}
   MinDistanceToHole: 1.5
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 463a693d4a9964e7693e25ef34be19db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlanetMesh: {fileID: 100002}
+  BeePanalMesh: {fileID: 100010}
+  PanalSecoMesh: {fileID: 100012}
+  GlowMesh: {fileID: 100000}
+  GlowBeeMesh: {fileID: 100008}
 --- !u!135 &13500000
 SphereCollider:
   m_ObjectHideFlags: 1
