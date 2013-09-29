@@ -173,6 +173,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a8a1f2aacbbde2949ac2047b35735d36, type: 2}
+      propertyPath: ObstaclesLayer.m_Bits
+      value: 8192
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8a1f2aacbbde2949ac2047b35735d36, type: 2}
   m_RootGameObject: {fileID: 836887478}
@@ -1575,7 +1579,7 @@ MonoBehaviour:
     m_Bits: 512
   ObstaclesLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   BeesCount: 0
   mPlanet: {fileID: 0}
   HoleCenter: {x: -8.26220894, y: 1.55369997, z: 0}
@@ -1749,6 +1753,10 @@ Prefab:
     - target: {fileID: 100000, guid: a8a1f2aacbbde2949ac2047b35735d36, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a8a1f2aacbbde2949ac2047b35735d36, type: 2}
+      propertyPath: ObstaclesLayer.m_Bits
+      value: 8192
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8a1f2aacbbde2949ac2047b35735d36, type: 2}
@@ -4659,7 +4667,7 @@ MonoBehaviour:
     m_Bits: 512
   ObstaclesLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   BeesCount: 50
   mPlanet: {fileID: 0}
   HoleCenter: {x: -8.26220894, y: 1.55369997, z: 0}
@@ -4872,6 +4880,10 @@ Prefab:
       propertyPath: m_Name
       value: PlanetaConAbejas
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a8a1f2aacbbde2949ac2047b35735d36, type: 2}
+      propertyPath: ObstaclesLayer.m_Bits
+      value: 8192
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8a1f2aacbbde2949ac2047b35735d36, type: 2}
   m_RootGameObject: {fileID: 1255000607}
@@ -5023,6 +5035,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: a8a1f2aacbbde2949ac2047b35735d36, type: 2}
+      propertyPath: ObstaclesLayer.m_Bits
+      value: 8192
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8a1f2aacbbde2949ac2047b35735d36, type: 2}
   m_RootGameObject: {fileID: 1094049360}
@@ -5037,17 +5053,17 @@ GameObject:
   m_Component:
   - 4: {fileID: 1553100720}
   - 33: {fileID: 1553100719}
-  - 64: {fileID: 1553100718}
   - 23: {fileID: 1553100717}
   - 114: {fileID: 1553100716}
   - 114: {fileID: 1553100715}
-  m_Layer: 0
+  - 135: {fileID: 1553100718}
+  m_Layer: 13
   m_Name: Asteroide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1553100715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5100,20 +5116,18 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
---- !u!64 &1553100718
-MeshCollider:
+--- !u!135 &1553100718
+SphereCollider:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400000, guid: 6a28aec270f979e44b0ab16f1bbd01d8,
-    type: 2}
-  m_PrefabInternal: {fileID: 1821567282}
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1553100714}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_SmoothSphereCollisions: 0
-  m_Convex: 0
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  m_Radius: 5.00000095
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1553100719
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5129,7 +5143,7 @@ Transform:
   m_PrefabInternal: {fileID: 1821567282}
   m_GameObject: {fileID: 1553100714}
   m_LocalRotation: {x: -.707106829, y: 0, z: 0, w: .707106829}
-  m_LocalPosition: {x: 5.21337366, y: 19.9690094, z: 1.00000048}
+  m_LocalPosition: {x: 2.5, y: -2.5, z: 10}
   m_LocalScale: {x: .179198444, y: .179198444, z: .179198444}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5290,15 +5304,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 6a28aec270f979e44b0ab16f1bbd01d8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 5.21337366
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6a28aec270f979e44b0ab16f1bbd01d8, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 19.9690094
+      value: -2.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6a28aec270f979e44b0ab16f1bbd01d8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1.00000048
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6a28aec270f979e44b0ab16f1bbd01d8, type: 2}
       propertyPath: m_LocalRotation.x
@@ -5326,9 +5340,14 @@ Prefab:
       objectReference: {fileID: 2100000, guid: 1fc35faa4f360f249b037fafb38fb105, type: 2}
     - target: {fileID: 100000, guid: 6a28aec270f979e44b0ab16f1bbd01d8, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 100000, guid: 6a28aec270f979e44b0ab16f1bbd01d8, type: 2}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6400000, guid: 6a28aec270f979e44b0ab16f1bbd01d8, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6a28aec270f979e44b0ab16f1bbd01d8, type: 2}
   m_RootGameObject: {fileID: 1553100714}
   m_IsPrefabParent: 0
@@ -5476,7 +5495,7 @@ MonoBehaviour:
     m_Bits: 512
   ObstaclesLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   BeesCount: 0
   mPlanet: {fileID: 0}
   HoleCenter: {x: -8.26220894, y: 1.55369997, z: 0}
@@ -5539,7 +5558,7 @@ MonoBehaviour:
     m_Bits: 512
   ObstaclesLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8192
   BeesCount: 0
   mPlanet: {fileID: 0}
   HoleCenter: {x: -8.26220894, y: 1.55369997, z: 0}
