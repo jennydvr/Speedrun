@@ -70,7 +70,7 @@ Skybox:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
-  m_CustomSkybox: {fileID: 2100000, guid: b9be0c15efe8ad9489fdeead114d8ec5, type: 2}
+  m_CustomSkybox: {fileID: 0}
 --- !u!81 &8100000
 AudioListener:
   m_ObjectHideFlags: 1
@@ -141,6 +141,7 @@ MonoBehaviour:
   Planets:
     serializedVersion: 2
     m_Bits: 2048
+  MouseLine: {fileID: 0}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -168,7 +169,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitialPosition: {x: 11.4438496, y: 23.5251904, z: 1}
-  Prefab: {fileID: 0}
+  Prefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  PrefabProba: 1e000000280000000a00000014000000
   MinTimeSpawn: 2
   MaxTimeSpawn: 5
 --- !u!124 &12400000

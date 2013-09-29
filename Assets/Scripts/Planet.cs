@@ -42,6 +42,8 @@ public class Planet : MonoBehaviour {
 
     private void Update() {
         if (Transfering && TransferOrigin) {
+            // Actualizo el trail
+            DrawTransferTrail(Me.position, TransferPlanet.Me.position);
 
             // Transferir abejas
             if (Time.time - TransferStartTime >= TransferRate) {
@@ -63,11 +65,7 @@ public class Planet : MonoBehaviour {
             // Chequear si hay obstaculos de por medio
             else if (AreObstaclesBetween(TransferPlanet)) {
                 // Elimino las abejas del planeta con menos abejas
-                if (TransferPlanet.BeesCount > BeesCount) {
-                    BeesCount = 0;
-                } else {
-                    TransferPlanet.BeesCount = 0;
-                }
+                TransferPlanet.BeesCount = 0;
 
                 EndTransfer();
                 TransferPlanet.EndTransfer();
@@ -101,13 +99,11 @@ public class Planet : MonoBehaviour {
     }
 
     private bool AreObstaclesBetween(Planet planet) {
-        return false;
-
-        /*Vector3 onePos = Me.position;
+        Vector3 onePos = Me.position;
         Vector3 twoPos = planet.transform.position;
         Vector3 diff = twoPos - onePos;
 
-        return Physics.Raycast(onePos, diff, diff.magnitude, ObstaclesLayer);*/
+        return Physics.Raycast(onePos, diff, diff.magnitude, ObstaclesLayer);
     }
 
     #endregion

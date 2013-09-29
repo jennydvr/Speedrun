@@ -6,7 +6,8 @@ public class ManagerPlanet : MonoBehaviour
 
     public ArrayList planetas;
     public Vector3 InitialPosition;
-    public GameObject Prefab;
+    public GameObject[] Prefab;
+    public int[] PrefabProba;
 
     public float MinTimeSpawn = 1.0f;
     public float MaxTimeSpawn = 3.0f;
@@ -23,8 +24,20 @@ public class ManagerPlanet : MonoBehaviour
 
     protected void AddPlanet(){
         CanSpawn = false;
+        int pos =  Random.Range(0,100);
+        int SumProb = 0;
+        for (int i=0; i<PrefabProba.Length; i++)
+        {
+            SumProb += PrefabProba[i];
+            if (SumProb > pos)
+            {
+                pos = i;
+                break;
+            }
+        }
+       
 
-        planetas.Add(Instantiate(Prefab, InitialPosition, Prefab.transform.rotation) as GameObject);
+        planetas.Add(Instantiate(Prefab[pos], InitialPosition, Prefab[pos].transform.rotation) as GameObject);
         //((GameObject)planetas[planetas.Count -1]).GetComponent<SplineController>().InitialPos = 10;
     }
     protected void SpawnPlanet(){
