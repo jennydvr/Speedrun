@@ -5,7 +5,7 @@ public class Planet : MonoBehaviour {
 
     #region Static Variables
 
-    public static float TransferSpeed = 1.0f;
+    public static float TransferSpeed = 0.01f;
     public LayerMask QueenLayer = -1, ObstaclesLayer = -1;
     public static LineRenderer TransferLine;
     
@@ -17,6 +17,7 @@ public class Planet : MonoBehaviour {
 
     public int BeesCount = 0;
 
+    private bool HadBees = false;
     private bool TransferOrigin = false;
     private Transform Me;
     private bool Selected = false;
@@ -25,11 +26,13 @@ public class Planet : MonoBehaviour {
     private float TransferRate;
     private Planet TransferPlanet;
 
-    #endregion
-
+    public PlanetType Type = PlanetType.None;
     public ManagerPlanet mPlanet;
     public Vector3 HoleCenter;
     public float MinDistanceToHole = 10.0f;
+
+    #endregion
+
     #region Unity
 
 	private void Start() {
@@ -41,37 +44,20 @@ public class Planet : MonoBehaviour {
 	}
 
     private void Update() {
+        // HadBees cambia si el planeta nunca ha tenido abejas, pero la cuenta indica que si
+        if (!HadBees && BeesCount > 0)
+            HadBees = true;
+
+        // Actualizo transferencia
         if (Transfering && TransferOrigin) {
-            // Actualizo el trail
-            DrawTransferTrail(Me.position, TransferPlanet.Me.position);
-
-            // Transferir abejas
-            if (Time.time - TransferStartTime >= TransferRate) {
-                BeesCount -= 1;
-                TransferPlanet.BeesCount += 1;
-                TransferStartTime = Time.time;
-            }
-
-            // Revisar si la transferencia termino sin problemas
-            if (BeesCount == 0) {
-                EndTransfer();
-                TransferPlanet.EndTransfer();
-            }
-            // Chequear si se interrumpe porque la abeja madre no esta
-            else if (!IsQueenBeeBetween(TransferPlanet)) {
-                EndTransfer();
-                TransferPlanet.EndTransfer();
-            }
-            // Chequear si hay obstaculos de por medio
-            else if (AreObstaclesBetween(TransferPlanet)) {
-                // Elimino las abejas del planeta con menos abejas
-                TransferPlanet.BeesCount = 0;
-
-                EndTransfer();
-                TransferPlanet.EndTransfer();
-            }
-
+            UpdateTransfer ();
         }
+        // Si no estamos transfiriendo y hay abejas, harvestear
+        else if (!Transfering && BeesCount > 0) {
+            Harvest (Time.deltaTime);
+        }
+
+        // Si la distancia minima se alcanza, eliminar planeta
         if ( Vector3.Distance( HoleCenter,new Vector3(transform.position.x,transform.position.y,0)) < MinDistanceToHole)
         {
             mPlanet.RemoverPlanet();
@@ -85,8 +71,42 @@ public class Planet : MonoBehaviour {
 
     #region Private Methods
 
-    private bool TransferEnded()
-    {
+    private void Harvest(float time) {
+        ResourcesCount.GatherResource (BeesCount * ResourcesCount.HarvestRate * time, Type);
+    }
+
+    private void UpdateTransfer() {
+        // Actualizo el trail
+        DrawTransferTrail(Me.position, TransferPlanet.Me.position);
+
+        // Transferir abejas
+        if (Time.time - TransferStartTime >= TransferRate) {
+            BeesCount -= 1;
+            TransferPlanet.BeesCount += 1;
+            TransferStartTime = Time.time;
+        }
+
+        // Revisar si la transferencia termino sin problemas
+        if (BeesCount == 0) {
+            EndTransfer();
+            TransferPlanet.EndTransfer();
+        }
+        // Chequear si se interrumpe porque la abeja madre no esta
+        else if (!IsQueenBeeBetween(TransferPlanet)) {
+            EndTransfer();
+            TransferPlanet.EndTransfer();
+        }
+        // Chequear si hay obstaculos de por medio
+        else if (AreObstaclesBetween(TransferPlanet)) {
+            // Elimino las abejas del planeta con menos abejas
+            TransferPlanet.BeesCount = 0;
+
+            EndTransfer();
+            TransferPlanet.EndTransfer();
+        }
+    }
+
+    private bool TransferEnded() {
         return TransferOrigin && BeesCount == 0;
     }
 
@@ -104,7 +124,7 @@ public class Planet : MonoBehaviour {
         Vector3 diff = twoPos - onePos;
 
         return Physics.Raycast(onePos, diff, diff.magnitude, ObstaclesLayer);
-    }
+         }
 
     #endregion
 
@@ -116,7 +136,6 @@ public class Planet : MonoBehaviour {
             return;
 
         Selected = select;
-        //renderer.material.color = select ? Color.red : Color.white;
 
         if (Selected)
             SelectedPlanets.Add(this);
@@ -126,10 +145,8 @@ public class Planet : MonoBehaviour {
 
     public void StartTransfer(Planet other, bool origin) {
         Transfering = true;
-        //renderer.material.color = Color.blue;
         TransferStartTime = Time.time;
-        TransferRate = TransferSpeed / (other.transform.position - Me.position).magnitude;
-
+        TransferRate = TransferSpeed * (other.transform.position - Me.position).magnitude;
         TransferPlanet = other;
         TransferOrigin = origin;
     }
@@ -181,7 +198,7 @@ public class Planet : MonoBehaviour {
         Planet two = SelectedPlanets[1];
 
         // Chequear que la transferencia sea posible
-        if (one.BeesCount > 0 && one.IsQueenBeeBetween(two) && !one.AreObstaclesBetween(two)) {
+        if (one.BeesCount > 0 && (!two.HadBees || two.BeesCount > 0) && one.IsQueenBeeBetween(two) && !one.AreObstaclesBetween(two)) {
             DrawTransferTrail(one.Me.position, two.Me.position);
 
             one.StartTransfer(two, true);
