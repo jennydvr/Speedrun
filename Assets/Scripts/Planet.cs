@@ -222,7 +222,7 @@ public class Planet : MonoBehaviour {
         Planet two = SelectedPlanets[1];
 
         // Chequear que la transferencia sea posible
-        if (one.BeesCount > 0 && (!two.HadBees || two.BeesCount > 0) && one.IsQueenBeeBetween(two) && !one.AreObstaclesBetween(two)) {
+        if (one.BeesCount > 0 && !two.HadBees && one.IsQueenBeeBetween(two) && !one.AreObstaclesBetween(two)) {
             DrawTransferTrail(one.Me.position, two.Me.position);
 
             one.StartTransfer(two, true);
