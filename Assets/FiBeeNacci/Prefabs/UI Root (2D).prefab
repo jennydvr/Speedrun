@@ -599,7 +599,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.47285652, z: 0}
+  m_LocalPosition: {x: -6.2026391, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -626,7 +626,7 @@ Transform:
   m_GameObject: {fileID: 100008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00625000009, y: .00625000009, z: .00625000009}
+  m_LocalScale: {x: .00419287197, y: .00419287197, z: .00419287197}
   m_Children:
   - {fileID: 400006}
   m_Father: {fileID: 0}
@@ -743,7 +743,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 634.092468, y: -1391.68726, z: 0}
+  m_LocalPosition: {x: 949.010986, y: -2069.80103, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400026}
@@ -947,7 +947,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100062}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1410.53198, y: 1793.01099, z: 0}
+  m_LocalPosition: {x: 2102.71045, y: 2664.71362, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400060}
@@ -1091,17 +1091,17 @@ MonoBehaviour:
   widgetsAreStatic: 0
   cullWhileDragging: 0
   worldToLocal:
-    e00: 160
+    e00: 238.500015
     e01: 0
     e02: 0
-    e03: 0
+    e03: 6.2026391
     e10: 0
-    e11: 160
+    e11: 238.500015
     e12: 0
-    e13: -6.47285652
+    e13: 0
     e20: 0
     e21: 0
-    e22: 160
+    e22: 238.500015
     e23: 0
     e30: 0
     e31: 0
@@ -1431,17 +1431,17 @@ MonoBehaviour:
   widgetsAreStatic: 0
   cullWhileDragging: 0
   worldToLocal:
-    e00: 160
+    e00: 238.500015
     e01: 0
     e02: 0
-    e03: -634.092468
+    e03: -949.010986
     e10: 0
-    e11: 160
+    e11: 238.500015
     e12: 0
-    e13: 1391.68726
+    e13: 2069.80103
     e20: 0
     e21: 0
-    e22: 160
+    e22: 238.500015
     e23: 0
     e30: 0
     e31: 0
@@ -1581,7 +1581,13 @@ MonoBehaviour:
   pressed: {r: .5, g: .5, b: .5, a: 1}
   duration: .200000003
   disabledColor: {r: .5, g: .5, b: .5, a: 1}
-  onClick: []
+  onClick:
+  - mTarget: {fileID: 0}
+    mMethodName: TryUsingSpeed
+    oneShot: 0
+  - mTarget: {fileID: 0}
+    mMethodName: StopMovement
+    oneShot: 0
 --- !u!114 &11400042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1818,7 +1824,13 @@ MonoBehaviour:
   pressed: {r: .5, g: .5, b: .5, a: 1}
   duration: .200000003
   disabledColor: {r: .5, g: .5, b: .5, a: 1}
-  onClick: []
+  onClick:
+  - mTarget: {fileID: 0}
+    mMethodName: TryUsingBomb
+    oneShot: 0
+  - mTarget: {fileID: 0}
+    mMethodName: StopMovement
+    oneShot: 0
 --- !u!114 &11400060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1936,17 +1948,17 @@ MonoBehaviour:
   widgetsAreStatic: 0
   cullWhileDragging: 0
   worldToLocal:
-    e00: 160
+    e00: 238.500015
     e01: 0
     e02: 0
-    e03: -1410.53198
+    e03: -2102.71045
     e10: 0
-    e11: 160
+    e11: 238.500015
     e12: 0
-    e13: -1793.01099
+    e13: -2664.71362
     e20: 0
     e21: 0
-    e22: 160
+    e22: 238.500015
     e23: 0
     e30: 0
     e31: 0

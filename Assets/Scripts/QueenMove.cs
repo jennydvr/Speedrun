@@ -8,6 +8,7 @@ public class QueenMove : MonoBehaviour {
     public float MaxDistanceToReach = 0.1f;
     public float Speed = 1.0f;
 
+
     protected float ZPos = 10.0f;
     protected Plane plane;
     protected bool isMoving = false;
@@ -45,12 +46,10 @@ public class QueenMove : MonoBehaviour {
         }
 	}
 
-
-
 	//public bool CanMoveQueen = true;
 	Vector3 MouseClick(){
 
-        if (Joystick.CanMoveQueen)
+        if (Joystick.CanMoveQueen && !Stop)
         {
             Ray ray = Joystick.ScreenRay;
             float ent = 100.0f;
@@ -70,11 +69,23 @@ public class QueenMove : MonoBehaviour {
            // return newPos ;
 	
        
-        } else if(isMoving)
+        } else if(isMoving && !Stop)
         {
             return MousePosition;
         }
         isMoving = false;
         return Vector3.zero;
     }
+
+    public bool Stop = false;
+    public void StopMovement() {
+        Stop = true;
+        Joystick.CanMoveQueen = false;
+        Invoke ("StartMovement", 0.1f);
+    }
+
+    public void StartMovement() {
+        Stop = false;
+    }
+
 }
