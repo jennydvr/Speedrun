@@ -24,10 +24,14 @@ public class Planet : MonoBehaviour {
 
     #endregion
 
+    public ManagerPlanet mPlanet;
+    public Vector3 HoleCenter;
+    public float MinDistanceToHole = 10.0f;
     #region Unity
 
 	private void Start() {
         Me = transform;
+        mPlanet = (ManagerPlanet)GameObject.FindObjectOfType(typeof(ManagerPlanet));
 	}
 
     private void Update() {
@@ -47,6 +51,13 @@ public class Planet : MonoBehaviour {
                 TransferPlanet.EndTransfer();
             }
         }
+        if ( Vector3.Distance( HoleCenter,new Vector3(transform.position.x,transform.position.y,0)) < MinDistanceToHole)
+        {
+            mPlanet.RemoverPlanet();
+
+        }
+
+
     }
 
     #endregion

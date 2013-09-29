@@ -31,7 +31,7 @@ GameObject:
   - 114: {fileID: 11400000}
   m_Layer: 11
   m_Name: Planet_Collider
-  m_TagString: Untagged
+  m_TagString: Planet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,6 +101,10 @@ MonoBehaviour:
   ObstaclesLayer:
     serializedVersion: 2
     m_Bits: 0
+  BeesCount: 0
+  mPlanet: {fileID: 0}
+  HoleCenter: {x: -8.26220894, y: 1.55369997, z: 0}
+  MinDistanceToHole: 1.5
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SplineRoot: {fileID: 0}
-  Duration: 200
+  Duration: 10
   OrientationMode: 0
   WrapMode: 0
   AutoStart: 1
@@ -139,7 +143,7 @@ SphereCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 2.79999995

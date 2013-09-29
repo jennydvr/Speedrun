@@ -31,6 +31,8 @@ public class ManagerPlanet : MonoBehaviour
 
        
         int pos = planetas.Count - 1;
+        if (pos < 0)
+            pos = 0;
         GameObject plan = ((GameObject)planetas[pos]);
         plan.SetActive(true);
         plan.GetComponent<SplineInterpolator>().Reset();
@@ -44,8 +46,11 @@ public class ManagerPlanet : MonoBehaviour
     }
 
 
-    public void RemoverPlanet(GameObject planet){
-        planetas.Remove(planet);
+    public void RemoverPlanet(){
+      
+        GameObject pla = (GameObject)planetas[0];
+        planetas.RemoveAt(0);
+        Destroy(pla);
     }
 
 
