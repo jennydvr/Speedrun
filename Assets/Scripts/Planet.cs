@@ -6,7 +6,7 @@ public class Planet : MonoBehaviour {
     #region Static Variables
 
     public static float TransferSpeed = 0.01f;
-    public LayerMask QueenLayer = -1, ObstaclesLayer = -1;
+    public LayerMask QueenLayer = -1, ObstaclesLayer = -1, PlanetsLayer = -1;
     public static LineRenderer TransferLine;
     
     private static List<Planet> SelectedPlanets = new List<Planet>();
@@ -123,8 +123,19 @@ public class Planet : MonoBehaviour {
         Vector3 twoPos = planet.transform.position;
         Vector3 diff = twoPos - onePos;
 
-        return Physics.Raycast(onePos, diff, diff.magnitude, ObstaclesLayer);
-         }
+        bool ObstaclesBetween = false;
+
+        // Revisar primero que no hayan asteroides
+        ObstaclesBetween = Physics.Raycast(onePos, diff, diff.magnitude, ObstaclesLayer);
+
+        // Revisar ahora que no hayan planetas
+        RaycastHit hit;
+        if (Physics.Raycast(onePos, diff, out hit, diff.magnitude, PlanetsLayer)) {
+            ObstaclesBetween |= hit.collider.gameObject.GetInstanceID() != planet.gameObject.GetInstanceID();
+        }
+
+        return ObstaclesBetween;
+    }
 
     #endregion
 
