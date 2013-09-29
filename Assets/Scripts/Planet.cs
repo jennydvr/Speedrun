@@ -26,7 +26,7 @@ public class Planet : MonoBehaviour {
     private float TransferRate;
     private Planet TransferPlanet;
 
-    public PlanetType Type = PlanetType.None;
+    public ResourcesID Type = ResourcesID.None;
     public ManagerPlanet mPlanet;
     public Vector3 HoleCenter;
     public float MinDistanceToHole = 10.0f;
@@ -72,7 +72,7 @@ public class Planet : MonoBehaviour {
     #region Private Methods
 
     private void Harvest(float time) {
-        ResourcesCount.GatherResource (BeesCount * ResourcesCount.HarvestRate * time, Type);
+        ManagerResources.GatherResource (BeesCount * ManagerResources.HarvestRate * time, Type);
     }
 
     private void UpdateTransfer() {

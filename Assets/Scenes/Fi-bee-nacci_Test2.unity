@@ -276,7 +276,7 @@ Transform:
   m_GameObject: {fileID: 84602990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00366300368, y: .00366300368, z: .00366300368}
+  m_LocalScale: {x: .00375234522, y: .00375234522, z: .00375234522}
   m_Children:
   - {fileID: 291326940}
   m_Father: {fileID: 0}
@@ -2831,17 +2831,17 @@ MonoBehaviour:
   widgetsAreStatic: 0
   cullWhileDragging: 0
   worldToLocal:
-    e00: 273
+    e00: 266.5
     e01: 0
     e02: 0
     e03: 0
     e10: 0
-    e11: 273
+    e11: 266.5
     e12: 0
-    e13: 6.19858074
+    e13: 6.2100091
     e20: 0
     e21: 0
-    e22: 273
+    e22: 266.5
     e23: 0
     e30: 0
     e31: 0
@@ -3429,7 +3429,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 2.5
+      scalar: 1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3462,7 +3462,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: .00999999978
+      scalar: .300000012
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3589,7 +3589,7 @@ ParticleSystem:
         rgba: 4293131519
       minMaxState: 0
     startSize:
-      scalar: 2.25
+      scalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4508,6 +4508,30 @@ Prefab:
     - target: {fileID: 100006, guid: 86b6d05980d865944a627856c8b95c57, type: 2}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 86b6d05980d865944a627856c8b95c57, type: 2}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: .300000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 86b6d05980d865944a627856c8b95c57, type: 2}
+      propertyPath: m_LocalScale.x
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 86b6d05980d865944a627856c8b95c57, type: 2}
+      propertyPath: m_LocalScale.y
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 400006, guid: 86b6d05980d865944a627856c8b95c57, type: 2}
+      propertyPath: m_LocalScale.z
+      value: .200000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 86b6d05980d865944a627856c8b95c57, type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: 86b6d05980d865944a627856c8b95c57, type: 2}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 86b6d05980d865944a627856c8b95c57, type: 2}
@@ -8053,7 +8077,7 @@ Transform:
   m_PrefabInternal: {fileID: 1179426739}
   m_GameObject: {fileID: 588343551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.19858074, z: 0}
+  m_LocalPosition: {x: 0, y: -6.2100091, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 256767815}
@@ -8154,6 +8178,22 @@ Prefab:
     - target: {fileID: 11400004, guid: fa45b136f9fdfef4b882cfad8a18cd7d, type: 2}
       propertyPath: MinDistanceToHole
       value: 1.79999995
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: fa45b136f9fdfef4b882cfad8a18cd7d, type: 2}
+      propertyPath: InitialModule.startColor.maxColor.rgba
+      value: 4284365072
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: fa45b136f9fdfef4b882cfad8a18cd7d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: fa45b136f9fdfef4b882cfad8a18cd7d, type: 2}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: -.150000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 19800000, guid: fa45b136f9fdfef4b882cfad8a18cd7d, type: 2}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fa45b136f9fdfef4b882cfad8a18cd7d, type: 2}
@@ -8479,8 +8519,12 @@ MonoBehaviour:
   EndPoint: {x: -8.26220894, y: 1.55369997, z: 0}
   Particles:
   - {fileID: 1143892335}
-  - {fileID: 998475877}
   - {fileID: 1758100604}
+  - {fileID: 998475877}
+  Limits:
+  - {x: .75, y: .75}
+  - {x: .75, y: 3.5}
+  - {x: 4.1500001, y: 4.1500001}
 --- !u!1 &677940175
 GameObject:
   m_ObjectHideFlags: 0
@@ -12949,6 +12993,7 @@ MonoBehaviour:
   InitialPoint: {x: 10, y: 1.55369997, z: 1}
   EndPoint: {x: -8.26220894, y: 1.55369997, z: 0}
   Particles: []
+  Limits: []
 --- !u!1 &1131688425
 GameObject:
   m_ObjectHideFlags: 0
@@ -14130,15 +14175,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: de38981d184224a199a56d7fafd4ed91, type: 2}
       propertyPath: m_LocalScale.x
-      value: .00366300368
+      value: .00375234522
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: de38981d184224a199a56d7fafd4ed91, type: 2}
       propertyPath: m_LocalScale.y
-      value: .00366300368
+      value: .00375234522
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: de38981d184224a199a56d7fafd4ed91, type: 2}
       propertyPath: m_LocalScale.z
-      value: .00366300368
+      value: .00375234522
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: de38981d184224a199a56d7fafd4ed91, type: 2}
       propertyPath: m_LocalPosition.x
@@ -14146,7 +14191,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: de38981d184224a199a56d7fafd4ed91, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -6.19858074
+      value: -6.2100091
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: de38981d184224a199a56d7fafd4ed91, type: 2}
@@ -17988,13 +18033,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1485192158}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ebb0607c62294d689eaf43f7a3e12ee, type: 3}
+  m_Script: {fileID: 11500000, guid: efe333746742b4620ac120a443587bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Wind: 0
-  Fire: 0
-  Earth: 0
-  Plant: 0
 --- !u!1 &1495185323
 GameObject:
   m_ObjectHideFlags: 0
@@ -20550,6 +20591,10 @@ MonoBehaviour:
   - {fileID: 1323971032}
   - {fileID: 476722361}
   - {fileID: 1961375524}
+  Limits:
+  - {x: .75, y: .75}
+  - {x: 2, y: 10}
+  - {x: 4.1500001, y: 4.1500001}
 --- !u!114 &1877299449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20566,18 +20611,18 @@ MonoBehaviour:
   widgetsAreStatic: 0
   cullWhileDragging: 0
   worldToLocal:
-    e00: 1
+    e00: .666666687
     e01: 0
     e02: 0
-    e03: -11.4438496
+    e03: 0
     e10: 0
-    e11: 1
+    e11: .666666687
     e12: 0
-    e13: -23.5251904
+    e13: 0
     e20: 0
     e21: 0
-    e22: 1
-    e23: -1
+    e22: .666666687
+    e23: 0
     e30: 0
     e31: 0
     e32: 0
@@ -22095,7 +22140,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: .150000006
+      scalar: -.150000006
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -22219,10 +22264,10 @@ ParticleSystem:
         rgba: 4294967295
       maxColor:
         serializedVersion: 2
-        rgba: 4279438091
+        rgba: 4284365072
       minMaxState: 0
     startSize:
-      scalar: 2.53999996
+      scalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -23295,6 +23340,10 @@ MonoBehaviour:
   - {fileID: 1360044158}
   - {fileID: 2005037651}
   - {fileID: 1096913909}
+  Limits:
+  - {x: .75, y: .75}
+  - {x: 3, y: 11}
+  - {x: 4.1500001, y: 4.1500001}
 --- !u!1 &2023672071
 GameObject:
   m_ObjectHideFlags: 0
@@ -23321,7 +23370,7 @@ Transform:
   m_GameObject: {fileID: 2023672071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 11.4438496, y: 23.5251904, z: 10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
   m_Children:
   - {fileID: 1210931512}
   - {fileID: 446695235}
@@ -23384,6 +23433,10 @@ MonoBehaviour:
   - {fileID: 1210931514}
   - {fileID: 446695237}
   - {fileID: 811098769}
+  Limits:
+  - {x: .75, y: .75}
+  - {x: 1, y: 5.5}
+  - {x: 4.1500001, y: 4.1500001}
 --- !u!1 &2028569596
 GameObject:
   m_ObjectHideFlags: 0

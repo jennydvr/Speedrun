@@ -2,14 +2,20 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public enum ResourcesID {None, Fire, Wind, Earth, Grass};
+public enum ResourcesID : byte {
+    Wind,
+    Fire,
+    Earth,
+    Grass,
+    None
+}
 
 public class ManagerResources : MonoBehaviour
 {
 
+    public static float HarvestRate = 0.5f;
+    protected static Dictionary<ResourcesID,int> Resources;
 
-    protected Dictionary<ResourcesID,int> Resources;
-    // Use this for initialization
     void Start()
     {
         Resources = new Dictionary<ResourcesID,int>();
@@ -19,10 +25,9 @@ public class ManagerResources : MonoBehaviour
         Resources.Add(ResourcesID.Grass,0);
     }
 
-
     public bool ReachGoal(ResourcesID[] GoalResourcesID,int[] GoalResources ){
         bool win = true;
-        for (int i =0; i<GoalResourcesID.Length; i++)
+        for (int i =0; i != GoalResourcesID.Length; ++i)
         {
             if (Resources[GoalResourcesID[i]] < GoalResources[i])
             {
@@ -34,8 +39,9 @@ public class ManagerResources : MonoBehaviour
         return win;
     }
 
-    public void AddResources(ResourcesID resor,int newR){
-        Resources[resor] += newR;
+    public static void GatherResource(float amount, ResourcesID type) {
+        Resources [type] += Mathf.CeilToInt(amount);
     }
+
 }
 
