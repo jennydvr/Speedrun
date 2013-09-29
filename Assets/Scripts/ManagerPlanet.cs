@@ -13,6 +13,8 @@ public class ManagerPlanet : MonoBehaviour
     public float MaxTimeSpawn = 3.0f;
     protected bool CanSpawn = true;
 
+    public int TotalBees;
+
     public int MinBee = 10;
     public int MaxBee = 20;
     // Use this for initialization
@@ -45,7 +47,8 @@ public class ManagerPlanet : MonoBehaviour
         SpawnPlanet(9);
         SpawnPlanet(10);
 
-        ((Planet) ( (GameObject) planetas[Random.Range(2, 7)]).GetComponentInChildren(typeof(Planet))).BeesCount =Random.Range(MinBee, MaxBee) ;
+        TotalBees = Random.Range (MinBee, MaxBee);
+        ((Planet) ( (GameObject) planetas[Random.Range(2, 7)]).GetComponentInChildren(typeof(Planet))).BeesCount = TotalBees ;
 
 
 
