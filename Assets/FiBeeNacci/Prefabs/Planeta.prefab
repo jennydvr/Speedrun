@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SplineRoot: {fileID: 0}
-  Duration: 10
+  Duration: 200
   OrientationMode: 0
   WrapMode: 0
   AutoStart: 1
