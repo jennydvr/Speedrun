@@ -31,6 +31,12 @@ public class Planet : MonoBehaviour {
     public Vector3 HoleCenter;
     public float MinDistanceToHole = 10.0f;
 
+
+    public ManagerResources mResources;
+    public float minRandomResources = 20;
+    public float maxRandomResources = 30;
+    protected float maxResources;
+    protected float currentResources = 0;
     #endregion
 
     #region Unity
@@ -41,6 +47,8 @@ public class Planet : MonoBehaviour {
         if (!TransferLine)
             TransferLine = GameObject.Find("TransferLine").GetComponent<LineRenderer>();
         mPlanet = (ManagerPlanet)GameObject.FindObjectOfType(typeof(ManagerPlanet));
+        mResources = (ManagerResources)GameObject.FindObjectOfType(typeof(ManagerResources));
+        maxResources = Random.Range(minRandomResources, maxRandomResources);
 	}
 
     private void Update() {
@@ -53,7 +61,7 @@ public class Planet : MonoBehaviour {
             UpdateTransfer ();
         }
         // Si no estamos transfiriendo y hay abejas, harvestear
-        else if (!Transfering && BeesCount > 0) {
+        else if (!Transfering && BeesCount > 0 && currentResources <= maxResources) {
             Harvest (Time.deltaTime);
         }
 
@@ -72,7 +80,12 @@ public class Planet : MonoBehaviour {
     #region Private Methods
 
     private void Harvest(float time) {
-        ManagerResources.GatherResource (BeesCount * ManagerResources.HarvestRate * time, Type);
+        float nowResour = BeesCount * ManagerResources.HarvestRate * time;
+        currentResources += nowResour;
+      
+        if(currentResources <= maxResources){
+            mResources.GatherResource (nowResour , Type);
+        }
     }
 
     private void UpdateTransfer() {

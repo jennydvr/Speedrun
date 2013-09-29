@@ -5,7 +5,7 @@ public class ItemResources : MonoBehaviour
 {
     public ManagerResources mResources;
     public ResourcesID[] GoalResourcesID;
-    public int[] GoalResources;
+    public float[] GoalResources;
 
     public bool Unlock = false;
     // Use this for initialization
