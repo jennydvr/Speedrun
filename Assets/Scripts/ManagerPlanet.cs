@@ -134,6 +134,12 @@ public class ManagerPlanet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (End)
+            return;
+
+        if (TotalBees == 0 && !End) {
+            GameOver ();
+        }
         if (CanSpawn)
         {
             SpawnPlanet();
@@ -143,5 +149,29 @@ public class ManagerPlanet : MonoBehaviour
 
 
     }
+
+    public bool End = false;
+
+    public void GameOver() {
+        End = true;
+
+        // Desactivo abeja = QueenMove
+        (GameObject.FindObjectOfType (typeof(QueenMove)) as QueenMove).enabled = false;
+
+        for (int i = 0; i != planetas.Count; ++i) {
+            GameObject planeta = planetas [i] as GameObject;
+
+            // Desactivo splines = Spline Interpolator
+            SplineInterpolator s = planeta.GetComponent<SplineInterpolator> ();
+            if (s)
+                s.enabled = false;
+
+            // Desactivo transferencias - harvest... = Planet
+            Planet p = planeta.GetComponentInChildren<Planet> ();
+            if (p)
+                p.enabled = false;
+        }
+    }
+
 }
 
