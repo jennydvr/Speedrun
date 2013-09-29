@@ -75,6 +75,10 @@ public class Planet : MonoBehaviour {
 
     }
 
+    private void OnDestroy() {
+        mPlanet.TotalBees -= BeesCount;
+    }
+
     #endregion
 
     #region Private Methods
@@ -136,18 +140,19 @@ public class Planet : MonoBehaviour {
         Vector3 twoPos = planet.transform.position;
         Vector3 diff = twoPos - onePos;
 
-        bool ObstaclesBetween = false;
-
         // Revisar primero que no hayan asteroides
-        ObstaclesBetween = Physics.Raycast(onePos, diff, diff.magnitude, ObstaclesLayer);
+        if (Physics.Raycast (onePos, diff, diff.magnitude, ObstaclesLayer)) {
+            Debug.Log ("Asteroide");
+            return true;
+        }
 
         // Revisar ahora que no hayan planetas
         RaycastHit hit;
         if (Physics.Raycast(onePos, diff, out hit, diff.magnitude, PlanetsLayer)) {
-            ObstaclesBetween |= hit.collider.gameObject.GetInstanceID() != planet.gameObject.GetInstanceID();
+            return hit.collider.gameObject.GetInstanceID() != planet.gameObject.GetInstanceID();
         }
 
-        return ObstaclesBetween;
+        return false;
     }
 
     #endregion
@@ -222,7 +227,7 @@ public class Planet : MonoBehaviour {
         Planet two = SelectedPlanets[1];
 
         // Chequear que la transferencia sea posible
-        if (one.BeesCount > 0 && (!two.HadBees || two.BeesCount > 0) && one.IsQueenBeeBetween(two) && !one.AreObstaclesBetween(two)) {
+        if (one.BeesCount > 0 && !two.HadBees && one.IsQueenBeeBetween(two) && !one.AreObstaclesBetween(two)) {
             DrawTransferTrail(one.Me.position, two.Me.position);
 
             one.StartTransfer(two, true);
