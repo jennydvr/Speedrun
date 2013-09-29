@@ -209,7 +209,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -85.6813812, y: 5.2828083, z: 69.6042252}
+  m_LocalPosition: {x: 11.4438496, y: 23.5251904, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400018}
@@ -378,7 +378,7 @@ MonoBehaviour:
   BeePanalMesh: {fileID: 100008}
   PanalSecoMesh: {fileID: 100012}
   GlowMesh: {fileID: 100000}
-  GlowBeeMesh: {fileID: 100010}
+  GlowBeeMesh: {fileID: 100018}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
