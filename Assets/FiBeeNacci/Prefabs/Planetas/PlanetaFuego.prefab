@@ -429,6 +429,9 @@ MonoBehaviour:
   ObstaclesLayer:
     serializedVersion: 2
     m_Bits: 8192
+  PlanetsLayer:
+    serializedVersion: 2
+    m_Bits: 2048
   BeesCount: 0
   Type: 1
   mPlanet: {fileID: 0}
