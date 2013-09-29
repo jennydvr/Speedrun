@@ -5,7 +5,7 @@ public class Planet : MonoBehaviour {
 
     #region Static Variables
 
-    public static float TransferSpeed = 10.0f;
+    public static float TransferSpeed = 1.0f;
     public LayerMask QueenLayer = -1, ObstaclesLayer = -1;
     public static LineRenderer TransferLine;
     
@@ -16,12 +16,13 @@ public class Planet : MonoBehaviour {
     #region Instance Variables
 
     public int BeesCount = 0;
+
     private bool TransferOrigin = false;
     private Transform Me;
     private bool Selected = false;
     private bool Transfering = false;
     private float TransferStartTime;
-    private float TransferTime;
+    private float TransferRate;
     private Planet TransferPlanet;
 
     #endregion
@@ -36,21 +37,38 @@ public class Planet : MonoBehaviour {
 	}
 
     private void Update() {
-        if (Transfering && TransferOrigin)
-        {
-            // Chequear si se interrumpe
-            if (!IsTransferPossible(TransferPlanet)) {
+        if (Transfering && TransferOrigin) {
+
+            // Transferir abejas
+            if (Time.time - TransferStartTime >= TransferRate) {
+                BeesCount -= 1;
+                TransferPlanet.BeesCount += 1;
+                TransferStartTime = Time.time;
+            }
+
+            // Revisar si la transferencia termino sin problemas
+            if (BeesCount == 0) {
                 EndTransfer();
                 TransferPlanet.EndTransfer();
-
-            // Chequear si la transferencia ha terminado normalmente
-            } else if (TransferEnded()) {
-                TransferPlanet.BeesCount = BeesCount;
-                BeesCount = 0;
+            }
+            // Chequear si se interrumpe porque la abeja madre no esta
+            else if (!IsQueenBeeBetween(TransferPlanet)) {
+                EndTransfer();
+                TransferPlanet.EndTransfer();
+            }
+            // Chequear si hay obstaculos de por medio
+            else if (AreObstaclesBetween(TransferPlanet)) {
+                // Elimino las abejas del planeta con menos abejas
+                if (TransferPlanet.BeesCount > BeesCount) {
+                    BeesCount = 0;
+                } else {
+                    TransferPlanet.BeesCount = 0;
+                }
 
                 EndTransfer();
                 TransferPlanet.EndTransfer();
             }
+
         }
     }
 
@@ -60,21 +78,25 @@ public class Planet : MonoBehaviour {
 
     private bool TransferEnded()
     {
-        return TransferOrigin && Time.time - TransferStartTime >= TransferTime;
+        return TransferOrigin && BeesCount == 0;
     }
 
-    private bool IsTransferPossible(Planet planet)
-    {
-        // Revisar que hayan abejas
-        if (BeesCount == 0)
-            return false;
-
-        // Revisar que la reina siga de por medio
+    private bool IsQueenBeeBetween(Planet planet) {
         Vector3 onePos = Me.position;
         Vector3 twoPos = planet.transform.position;
         Vector3 diff = twoPos - onePos;
 
         return Physics.Raycast(onePos, diff, diff.magnitude, QueenLayer);
+    }
+
+    private bool AreObstaclesBetween(Planet planet) {
+        return false;
+
+        /*Vector3 onePos = Me.position;
+        Vector3 twoPos = planet.transform.position;
+        Vector3 diff = twoPos - onePos;
+
+        return Physics.Raycast(onePos, diff, diff.magnitude, ObstaclesLayer);*/
     }
 
     #endregion
@@ -99,9 +121,8 @@ public class Planet : MonoBehaviour {
         Transfering = true;
         renderer.material.color = Color.blue;
         TransferStartTime = Time.time;
-        TransferTime = TransferSpeed / (other.transform.position - Me.position).magnitude;
+        TransferRate = TransferSpeed / (other.transform.position - Me.position).magnitude;
 
-        Debug.Log (TransferTime);
         TransferPlanet = other;
         TransferOrigin = origin;
     }
@@ -153,7 +174,7 @@ public class Planet : MonoBehaviour {
         Planet two = SelectedPlanets[1];
 
         // Chequear que la transferencia sea posible
-        if (one.IsTransferPossible(two)) {
+        if (one.BeesCount > 0 && one.IsQueenBeeBetween(two) && !one.AreObstaclesBetween(two)) {
             DrawTransferTrail(one.Me.position, two.Me.position);
 
             one.StartTransfer(two, true);
