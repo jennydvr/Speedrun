@@ -179,8 +179,11 @@ MonoBehaviour:
   PrefabProba: 19000000190000001900000019000000
   MinTimeSpawn: 5
   MaxTimeSpawn: 15
+  TotalBees: 0
   MinBee: 10
   MaxBee: 20
+  UILost: {fileID: 0}
+  End: 0
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1

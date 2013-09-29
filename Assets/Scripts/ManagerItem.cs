@@ -57,6 +57,7 @@ public class ManagerItem : MonoBehaviour {
         if (Powers[2].Unlocked()) {
             Debug.Log ("Tapon dice: GANEEEEEEEEEE");
             Powers [2].Use ();
+            ((ManagerPlanet)GameObject.FindObjectOfType(typeof(ManagerPlanet))).GameOver();
         }
     }    
 
