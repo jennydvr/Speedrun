@@ -176,8 +176,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   PrefabProba: 19000000190000001900000019000000
-  MinTimeSpawn: 2
-  MaxTimeSpawn: 5
+  MinTimeSpawn: 5
+  MaxTimeSpawn: 15
+  MinBee: 10
+  MaxBee: 20
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
