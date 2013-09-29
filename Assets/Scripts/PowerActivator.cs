@@ -42,7 +42,10 @@ public class Bomb : PowerActivator {
         AddGoal (ResourcesID.Earth, 35);
         AddGoal (ResourcesID.Fire, 60);
     }
-
+    public Bomb(int ea, int fi) {
+        AddGoal (ResourcesID.Earth, ea);
+        AddGoal (ResourcesID.Fire, fi);
+    }
     public override void Use ()
     {
 
@@ -59,6 +62,11 @@ public class Speed : PowerActivator {
         AddGoal (ResourcesID.Grass, 25);
     }
 
+    public Speed(int wi, int gra) {
+        AddGoal (ResourcesID.Wind, wi);
+        AddGoal (ResourcesID.Grass, gra);
+    }
+
     public override void Use ()
     {
         mResources.IncreaseSpeed ();
@@ -68,19 +76,39 @@ public class Speed : PowerActivator {
 }
 
 public class Tapon : PowerActivator {
-    
+
+    public GameObject TaponGUI;
+    public GameObject Hollo;
     // Tapon: ??
     public Tapon() {
         AddGoal (ResourcesID.Earth, 120);
         AddGoal (ResourcesID.Fire, 90);
         AddGoal (ResourcesID.Wind, 75);
         AddGoal (ResourcesID.Grass, 60);
+
+        TaponGUI = GameObject.FindGameObjectWithTag("Tapon");
+        Hollo =  GameObject.FindGameObjectWithTag("Hollo");
+
+    }    
+
+    public Tapon(int ea, int fi, int wi, int gr) {
+        AddGoal (ResourcesID.Earth, ea);
+        AddGoal (ResourcesID.Fire, fi);
+        AddGoal (ResourcesID.Wind, wi);
+        AddGoal (ResourcesID.Grass, gr);
+
+        TaponGUI = GameObject.FindGameObjectWithTag("Tapon");
+        TaponGUI.SetActive(false);
+        Hollo =  GameObject.FindGameObjectWithTag("Hollo");
+
     }    
 
     public override void Use ()
     {
-
+       
         base.Use ();
+        TaponGUI.SetActive(true);
+        Hollo.SetActive(false);
     }
 
 }

@@ -183,7 +183,10 @@ MonoBehaviour:
   TotalBees: 0
   MinBee: 10
   MaxBee: 20
+<<<<<<< HEAD
+=======
   UILost: {fileID: 0}
+>>>>>>> 83da051e4a8b57ce132bbc800a071a77a516f536
   End: 0
 --- !u!114 &11400008
 MonoBehaviour:

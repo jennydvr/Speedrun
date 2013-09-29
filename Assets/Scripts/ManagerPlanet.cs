@@ -33,6 +33,7 @@ public class ManagerPlanet : MonoBehaviour
         AddPlanet(Random.Range(7,9));
         AddPlanet(Random.Range(5,7));
     }
+    public GameObject UILost;
     void Start()
     {
         SpawnPlanet(0);
@@ -55,6 +56,7 @@ public class ManagerPlanet : MonoBehaviour
         AddPlanet();
         Invoke("ReadySpawn", Random.Range(MinTimeSpawn, MaxTimeSpawn));
        
+        UILost.SetActive(false);
     }
 
 
@@ -138,6 +140,9 @@ public class ManagerPlanet : MonoBehaviour
             return;
 
         if (TotalBees == 0 && !End) {
+            Debug.Log("Perdi");
+
+            UILost.SetActive(true);
             GameOver ();
         }
         if (CanSpawn)
