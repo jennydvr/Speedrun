@@ -87,6 +87,8 @@ public class ManagerAsteroids : MonoBehaviour {
     }
     protected void SpawnAsteroid(){
 
+        if (asteroides.Count == 0)
+            return;
 
         int pos = asteroides.Count - 1;
         if (pos < 0)
@@ -120,7 +122,13 @@ public class ManagerAsteroids : MonoBehaviour {
         asteroides.RemoveAt(0);
         Destroy(pla);
     }
-
+    public void DestroyAll(){
+    
+        while (asteroides.Count > 0)
+        {
+            RemoverAsteroid();
+        }
+    }
 
     // Update is called once per frame
     void Update()

@@ -36,7 +36,8 @@ public class PowerActivator {
 }
 
 public class Bomb : PowerActivator {
-    
+
+    ManagerAsteroids mAst;
     // Bomba: T x 00 + F x 00
     public Bomb() {
         AddGoal (ResourcesID.Earth, 35);
@@ -45,10 +46,11 @@ public class Bomb : PowerActivator {
     public Bomb(int ea, int fi) {
         AddGoal (ResourcesID.Earth, ea);
         AddGoal (ResourcesID.Fire, fi);
+        mAst = (ManagerAsteroids)GameObject.FindObjectOfType(typeof(ManagerAsteroids));
     }
     public override void Use ()
     {
-
+        mAst.DestroyAll();
         base.Use ();
     }
 

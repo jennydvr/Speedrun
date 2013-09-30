@@ -287,9 +287,35 @@ MonoBehaviour:
     paddingRight: 2
     paddingTop: 2
     paddingBottom: 7
+  - name: soundmute
+    x: 371
+    y: 390
+    width: 87
+    height: 58
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 6
+    paddingRight: 7
+    paddingTop: 19
+    paddingBottom: 23
+  - name: soundon
+    x: 282
+    y: 383
+    width: 88
+    height: 65
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 6
+    paddingRight: 6
+    paddingTop: 16
+    paddingBottom: 19
   - name: torso10001
     x: 845
-    y: 906
+    y: 1147
     width: 233
     height: 240
     borderLeft: 0
@@ -302,7 +328,7 @@ MonoBehaviour:
     paddingBottom: 5
   - name: torso10002
     x: 1079
-    y: 1147
+    y: 1388
     width: 233
     height: 240
     borderLeft: 0
@@ -327,8 +353,8 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 6
   - name: torso10004
-    x: 1079
-    y: 908
+    x: 845
+    y: 667
     width: 233
     height: 238
     borderLeft: 0
@@ -353,8 +379,8 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 7
   - name: torso10006
-    x: 1346
-    y: 1095
+    x: 1810
+    y: 1334
     width: 231
     height: 237
     borderLeft: 0
@@ -366,8 +392,8 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 8
   - name: torso10007
-    x: 1810
-    y: 858
+    x: 1346
+    y: 621
     width: 230
     height: 236
     borderLeft: 0
@@ -419,7 +445,7 @@ MonoBehaviour:
     paddingBottom: 13
   - name: torso10011
     x: 2140
-    y: 655
+    y: 423
     width: 228
     height: 231
     borderLeft: 0
@@ -431,8 +457,8 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 14
   - name: torso10012
-    x: 2369
-    y: 1583
+    x: 2140
+    y: 655
     width: 228
     height: 231
     borderLeft: 0
@@ -444,8 +470,8 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 14
   - name: torso10013
-    x: 2369
-    y: 1121
+    x: 3745
+    y: 1584
     width: 228
     height: 230
     borderLeft: 0
@@ -470,7 +496,7 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 15
   - name: torso10015
-    x: 2828
+    x: 2598
     y: 1585
     width: 229
     height: 229
@@ -496,8 +522,8 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 15
   - name: torso10017
-    x: 3745
-    y: 1584
+    x: 2369
+    y: 1121
     width: 228
     height: 230
     borderLeft: 0
@@ -522,8 +548,8 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 14
   - name: torso10019
-    x: 2140
-    y: 423
+    x: 2369
+    y: 1583
     width: 228
     height: 231
     borderLeft: 0
@@ -535,7 +561,7 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 14
   - name: torso10020
-    x: 3056
+    x: 2598
     y: 1816
     width: 228
     height: 232
@@ -548,7 +574,7 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 13
   - name: torso10021
-    x: 2140
+    x: 2369
     y: 1815
     width: 228
     height: 233
@@ -587,7 +613,7 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 10
   - name: torso10024
-    x: 1578
+    x: 1346
     y: 858
     width: 231
     height: 236
@@ -600,7 +626,7 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 9
   - name: torso10025
-    x: 1810
+    x: 1346
     y: 1095
     width: 231
     height: 237
@@ -626,8 +652,8 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 7
   - name: torso10027
-    x: 1579
-    y: 1572
+    x: 845
+    y: 187
     width: 232
     height: 239
     borderLeft: 0
@@ -639,71 +665,6 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 6
   - name: torso10028
-    x: 1346
-    y: 1572
-    width: 232
-    height: 239
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 108
-    paddingRight: 160
-    paddingTop: 255
-    paddingBottom: 6
-  - name: torso10029
-    x: 845
-    y: 1147
-    width: 233
-    height: 240
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 107
-    paddingRight: 160
-    paddingTop: 255
-    paddingBottom: 5
-  - name: torso10030
-    x: 1079
-    y: 1388
-    width: 233
-    height: 240
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 106
-    paddingRight: 161
-    paddingTop: 255
-    paddingBottom: 5
-  - name: torso10031
-    x: 845
-    y: 1388
-    width: 233
-    height: 240
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 106
-    paddingRight: 161
-    paddingTop: 255
-    paddingBottom: 5
-  - name: torso10032
-    x: 470
-    y: 71
-    width: 233
-    height: 240
-    borderLeft: 0
-    borderRight: 0
-    borderTop: 0
-    borderBottom: 0
-    paddingLeft: 107
-    paddingRight: 160
-    paddingTop: 255
-    paddingBottom: 5
-  - name: torso10033
     x: 1078
     y: 427
     width: 232
@@ -716,9 +677,74 @@ MonoBehaviour:
     paddingRight: 160
     paddingTop: 255
     paddingBottom: 6
-  - name: torso10034
+  - name: torso10029
+    x: 470
+    y: 312
+    width: 233
+    height: 240
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 107
+    paddingRight: 160
+    paddingTop: 255
+    paddingBottom: 5
+  - name: torso10030
+    x: 470
+    y: 553
+    width: 233
+    height: 240
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 106
+    paddingRight: 161
+    paddingTop: 255
+    paddingBottom: 5
+  - name: torso10031
+    x: 470
+    y: 71
+    width: 233
+    height: 240
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 106
+    paddingRight: 161
+    paddingTop: 255
+    paddingBottom: 5
+  - name: torso10032
     x: 845
-    y: 667
+    y: 1388
+    width: 233
+    height: 240
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 107
+    paddingRight: 160
+    paddingTop: 255
+    paddingBottom: 5
+  - name: torso10033
+    x: 1579
+    y: 1572
+    width: 232
+    height: 239
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 108
+    paddingRight: 160
+    paddingTop: 255
+    paddingBottom: 6
+  - name: torso10034
+    x: 1079
+    y: 908
     width: 233
     height: 238
     borderLeft: 0
@@ -756,8 +782,8 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 8
   - name: torso10037
-    x: 1346
-    y: 621
+    x: 1810
+    y: 858
     width: 230
     height: 236
     borderLeft: 0
@@ -795,7 +821,7 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 12
   - name: torso10040
-    x: 2598
+    x: 3285
     y: 1816
     width: 228
     height: 232
@@ -822,7 +848,7 @@ MonoBehaviour:
     paddingBottom: 14
   - name: torso10042
     x: 2140
-    y: 1583
+    y: 1119
     width: 228
     height: 231
     borderLeft: 0
@@ -834,7 +860,7 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 14
   - name: torso10043
-    x: 3058
+    x: 3516
     y: 1584
     width: 228
     height: 230
@@ -860,7 +886,7 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 15
   - name: torso10045
-    x: 2598
+    x: 2828
     y: 1585
     width: 229
     height: 229
@@ -886,7 +912,7 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 15
   - name: torso10047
-    x: 3516
+    x: 3058
     y: 1584
     width: 228
     height: 230
@@ -900,7 +926,7 @@ MonoBehaviour:
     paddingBottom: 15
   - name: torso10048
     x: 2140
-    y: 1351
+    y: 1583
     width: 228
     height: 231
     borderLeft: 0
@@ -913,7 +939,7 @@ MonoBehaviour:
     paddingBottom: 14
   - name: torso10049
     x: 2140
-    y: 1119
+    y: 1351
     width: 228
     height: 231
     borderLeft: 0
@@ -925,7 +951,7 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 14
   - name: torso10050
-    x: 3285
+    x: 3056
     y: 1816
     width: 228
     height: 232
@@ -938,7 +964,7 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 13
   - name: torso10051
-    x: 2369
+    x: 2140
     y: 1815
     width: 228
     height: 233
@@ -977,7 +1003,7 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 10
   - name: torso10054
-    x: 1346
+    x: 1578
     y: 858
     width: 231
     height: 236
@@ -991,7 +1017,7 @@ MonoBehaviour:
     paddingBottom: 9
   - name: torso10055
     x: 1810
-    y: 1334
+    y: 1095
     width: 231
     height: 237
     borderLeft: 0
@@ -1016,8 +1042,8 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 7
   - name: torso10057
-    x: 845
-    y: 187
+    x: 1346
+    y: 1572
     width: 232
     height: 239
     borderLeft: 0
@@ -1042,8 +1068,8 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 6
   - name: torso10059
-    x: 470
-    y: 312
+    x: 845
+    y: 906
     width: 233
     height: 240
     borderLeft: 0
@@ -1055,8 +1081,8 @@ MonoBehaviour:
     paddingTop: 255
     paddingBottom: 5
   - name: torso10060
-    x: 470
-    y: 553
+    x: 1079
+    y: 1147
     width: 233
     height: 240
     borderLeft: 0

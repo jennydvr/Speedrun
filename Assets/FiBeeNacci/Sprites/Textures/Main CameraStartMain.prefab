@@ -15,12 +15,8 @@ GameObject:
   - 45: {fileID: 4500000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
-  - 114: {fileID: 11400004}
-  - 114: {fileID: 11400006}
-  - 114: {fileID: 11400008}
-  - 114: {fileID: 11400010}
   m_Layer: 10
-  m_Name: Main Camera
+  m_Name: Main CameraStartMain
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,91 +133,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73b42f02ba7ef41b4b9df5e0a4ed4620, type: 3}
+  m_Script: {fileID: 11500000, guid: 97b4768c3683045e4bfdb2e78272970c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Planets:
-    serializedVersion: 2
-    m_Bits: 2048
-  MouseLine: {fileID: 0}
---- !u!114 &11400004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d64145fc3dda084eaf32c77f34adf52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Bee: {fileID: 0}
-  Sprite: {fileID: 0}
-  MaxDistanceToReach: .100000001
-  Speed: 1
-  Stop: 0
---- !u!114 &11400006
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd2c5958a6c7a41daa28c54513978fbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitialPosition: {x: 11.4438496, y: 23.5251904, z: 1}
-  Prefab:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  PrefabProba: 19000000190000001900000019000000
-  MinTimeSpawn: 5
-  MaxTimeSpawn: 15
-  TotalBees: 0
-  MinBee: 10
-  MaxBee: 20
-  UILost: {fileID: 0}
-  End: 0
---- !u!114 &11400008
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efe333746742b4620ac120a443587bec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MaxResources: 99
-  FireCount: {fileID: 0}
-  WindCount: {fileID: 0}
-  GrassCount: {fileID: 0}
-  EarthCount: {fileID: 0}
-  MinHR: .200000003
-  MaxHR: 1.5
---- !u!114 &11400010
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9933910d4a8e84c12b8d69cdf41e5e93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  InitialPosition: {x: 11.4438496, y: 23.5251904, z: 0}
-  Prefab:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  PrefabProba: 210000002100000022000000
-  MinTimeSpawn: 8
-  MaxTimeSpawn: 25
+  threshhold: .0170000009
+  intensity: .74000001
+  blurSize: .25
+  resolution: 0
+  blurIterations: 2
+  blurType: 0
+  fastBloomShader: {fileID: 4800000, guid: 68a00c837b82e4c6d92e7da765dc5f1d, type: 3}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
